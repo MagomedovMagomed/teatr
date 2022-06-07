@@ -1,0 +1,52 @@
+﻿<Page x:Class="WpfApp1.PageClient.ClientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.PageClient"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ClientPage">
+
+    <Grid Background="#FFE4DFDF">
+        <StackPanel Orientation="Horizontal" Margin="0,60,0,0">
+            <ListView Name="Spectacle" Width="796">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="450">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="150"></RowDefinition>
+                                <RowDefinition Height="150"></RowDefinition>
+                                <RowDefinition Height="150"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding Nazvanie}" VerticalAlignment="Center" TextAlignment="Center" Width="200" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="26" Grid.Row="0"></TextBlock>
+                            <TextBlock Text="{Binding Time}" Grid.Row="1" HorizontalAlignment="Center" FontSize="11" FontWeight="Bold"></TextBlock>
+                            <TextBlock Text="{Binding Ostatok}" Grid.Row="2" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <WrapPanel>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Введите название спектакля:" Margin="0 0 38 0" Height="20"></TextBlock>
+                    <TextBox Height="20" Name="Search" Width="160" TextChanged="Search_TextChanged"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Выберите жанр:" Margin="0 0 108 0" Height="20" RenderTransformOrigin="-1.744,2.15"></TextBlock>
+                    <ComboBox x:Name="Filtr" SelectionChanged="Filtr_SelectionChanged" Height="20" Width="160">
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="Sort" Text="Выберите способ сортировки:" Margin="0 0 30 0" Height="20"></TextBlock>
+                    <ComboBox Height="20" Width="160" >
+                        <TextBlock><Run Text="По времени"/></TextBlock>
+                        <TextBlock><Run Text="По имени"/></TextBlock>
+                        <TextBlock><Run Text="По цене"/></TextBlock>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
+</Page>

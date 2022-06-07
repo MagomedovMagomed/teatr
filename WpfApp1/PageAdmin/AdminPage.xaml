@@ -1,0 +1,69 @@
+﻿<Page x:Class="WpfApp1.PageAdmin.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.PageAdmin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminPage">
+
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="450*"></RowDefinition>
+            <RowDefinition Height="80*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button Content="Добавить" Click="Add_Click" Name="Add" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="100"/>
+        <Button Grid.Column="3" Click="Delete_Click" Content="Удалить" Name="Delete" HorizontalAlignment="Right" Margin="0,5,10,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="100"/>
+        <TabControl Grid.Row="0">
+            <TabItem Header="Спектакль" Grid.Column="0">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DBSpec" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Название спектакля" Binding="{Binding Nazvanie}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Продолжительность" Binding="{Binding Time}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Осталось билетов" Binding="{Binding Ostatok}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Постановщик" Binding="{Binding Postanovshik.Familia}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Художник" Binding="{Binding Pointer.Familia}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Сценарист" Binding="{Binding Screenwriter.Familia}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Постер" Binding="{Binding Poster}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Жанр" Binding="{Binding Zanr.Name}" Width="*"></DataGridTextColumn>
+                            <DataGridTemplateColumn Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>  
+                                        <Button Content="Редактировать" Name="Edit" Click="Edit_Click"></Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="User">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DBUser" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Роль" Binding="{Binding idRole}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Фамилия" Binding="{Binding Surename}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Отчество" Binding="{Binding Father_name}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Телефон" Binding="{Binding Telephon}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дата рождения" Binding="{Binding Data_Birth}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"></DataGridTextColumn>
+                            <DataGridTemplateColumn Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Редактировать" Name="Edit" Click="Edit_Click"></Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

@@ -1,0 +1,59 @@
+﻿<Page x:Class="WpfApp1.PageMain.CreateAcc"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.PageMain"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="800"
+      Title="CreateAcc">
+
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <StackPanel HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="800" Margin="-10,0,0,0">
+            <StackPanel Height="51">
+                <Label Content="Окно Регистрации" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Ravie"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
+                <Label Margin="5px" Content="Введите Фамилию:" Width="180"/>
+                <TextBox x:Name="Surename" Margin="5px" TextWrapping="Wrap" Text="" Width="180"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Margin="210,0">
+                <Label Margin="5px" Content="Введите Имя:" Width="180"/>
+                <TextBox x:Name="Name" Margin="5px" TextWrapping="Wrap" Text="" Width="180"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Margin="210,0">
+                <Label Margin="5px" Content="Введите Отчество:" Width="180"/>
+                <TextBox x:Name="Father_name" Margin="5px" TextWrapping="Wrap" Text="" Width="180"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
+                <Label Margin="5px" Width="180" Content="Введите Логин:"/>
+                <TextBox x:Name="login" Margin="5px" TextWrapping="Wrap" Text="" Width="180"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
+                <Label Margin="5px" Content="Введите телефон:" Width="180"/>
+                <TextBox x:Name="Telepho" Margin="5px" Width="180"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
+                <Label Margin="5px" Content="Введите дату рождения:" Width="180"/>
+                <DatePicker Margin="5px" x:Name="Birth" Width="180" DisplayDateStart="" Text="DisplayDate" IsTodayHighlighted="False"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
+                <Label Margin="5px" Content="Введите электронную почту:" Width="180"/>
+                <TextBox x:Name="EMail" Margin="5px" Width="180"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Margin="210,0">
+                <Label Margin="5px" Content="Введите пароль:" Width="180"/>
+                <TextBox x:Name="txbPass" Margin="5px" Width="180"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Margin="210,0">
+                <Label Margin="5px" Content="Подтвердите пароль:" Width="180"/>
+                <PasswordBox x:Name="psbPass" PasswordChanged="PasswordBox_PasswordChanged" Margin="5px" Width="180"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Margin="210,0">
+                <Button x:Name="Create" Margin="5px" Content="Создать" Width="180" Click="Button_Click" IsEnabled="False"/>
+                <Button x:Name="Back" Margin="5px" Content="Назад" Width="180" Click="Back_Click"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>
