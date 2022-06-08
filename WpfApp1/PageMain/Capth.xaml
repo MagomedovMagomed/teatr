@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Capth" Height="250" Width="400" WindowStyle="None">
     <Grid Background="#FFE6E1E1" Margin="0,0,0,0">
-        <StackPanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="400">
-            <Label x:Name="capt" FontSize="50"/>
+        <StackPanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="400" Background="#FF564B4B">
+            <Label x:Name="capt" FontSize="50" FontStyle="Italic" FontFamily="Blackadder ITC"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="120" Margin="0,100,0,0" VerticalAlignment="Top" Width="400">
             <TextBox x:Name="captha" Height="40" TextWrapping="Wrap" Text="" Background="White"/>

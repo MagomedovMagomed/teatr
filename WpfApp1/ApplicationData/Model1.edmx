@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Model1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Model1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Akter">
           <Key>
             <PropertyRef Name="id_akter" />
@@ -113,54 +113,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Spectacle_Pointer">
-          <End Role="Pointer" Type="Self.Pointer" Multiplicity="1" />
-          <End Role="Spectacle" Type="Self.Spectacle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pointer">
-              <PropertyRef Name="id_xyd" />
-            </Principal>
-            <Dependent Role="Spectacle">
-              <PropertyRef Name="id_xydoz" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Spectacle_Postanovshik">
-          <End Role="Postanovshik" Type="Self.Postanovshik" Multiplicity="1" />
-          <End Role="Spectacle" Type="Self.Spectacle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Postanovshik">
-              <PropertyRef Name="id_post" />
-            </Principal>
-            <Dependent Role="Spectacle">
-              <PropertyRef Name="id_post" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Spectacle_Screenwriter">
-          <End Role="Screenwriter" Type="Self.Screenwriter" Multiplicity="1" />
-          <End Role="Spectacle" Type="Self.Spectacle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Screenwriter">
-              <PropertyRef Name="id_Scen" />
-            </Principal>
-            <Dependent Role="Spectacle">
-              <PropertyRef Name="id_scen" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Spectacle_Zanr">
-          <End Role="Zanr" Type="Self.Zanr" Multiplicity="1" />
-          <End Role="Spectacle" Type="Self.Spectacle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Zanr">
-              <PropertyRef Name="id_zanr" />
-            </Principal>
-            <Dependent Role="Spectacle">
-              <PropertyRef Name="id_zanr" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_User_Role">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -191,29 +143,12 @@
             <End Role="Spectacle" EntitySet="Spectacle" />
             <End Role="Akter and Spectacle" EntitySet="Akter and Spectacle" />
           </AssociationSet>
-          <AssociationSet Name="FK_Spectacle_Pointer" Association="Self.FK_Spectacle_Pointer">
-            <End Role="Pointer" EntitySet="Pointer" />
-            <End Role="Spectacle" EntitySet="Spectacle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Spectacle_Postanovshik" Association="Self.FK_Spectacle_Postanovshik">
-            <End Role="Postanovshik" EntitySet="Postanovshik" />
-            <End Role="Spectacle" EntitySet="Spectacle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Spectacle_Screenwriter" Association="Self.FK_Spectacle_Screenwriter">
-            <End Role="Screenwriter" EntitySet="Screenwriter" />
-            <End Role="Spectacle" EntitySet="Spectacle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Spectacle_Zanr" Association="Self.FK_Spectacle_Zanr">
-            <End Role="Zanr" EntitySet="Zanr" />
-            <End Role="Spectacle" EntitySet="Spectacle" />
-          </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -279,7 +214,7 @@
           <Property Name="id_spectacle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_post" Type="Int32" Nullable="false" />
           <Property Name="id_scen" Type="Int32" Nullable="false" />
-          <Property Name="Time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Time" Type="Int32" Nullable="false" />
           <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="id_xydoz" Type="Int32" Nullable="false" />
           <Property Name="id_zanr" Type="Int32" Nullable="false" />

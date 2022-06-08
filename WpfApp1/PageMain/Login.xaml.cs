@@ -36,7 +36,7 @@ namespace WpfApp1.PageMain
 				{
 					MessageBox.Show("Такого пользователя нет!", "Ошибка при авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
 					Capth capth = new Capth();
-					capth.Show();
+					capth.ShowDialog();
 				}
 				else
 				{
@@ -48,6 +48,10 @@ namespace WpfApp1.PageMain
 						case 2: AppFrame.frameMain.Navigate(new PageClient.ClientPage()); 
 							MessageBox.Show("Здравствуйте, Ученик " + usetObj.Name + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 							break;
+						case 3:
+							AppFrame.frameMain.Navigate(new PageClient.ClientPage());
+							MessageBox.Show("Здравствуйте, Менеджер " + usetObj.Name + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+							break;
 						default: MessageBox.Show("Данные не обнаружены !", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
 							break;
 					}
@@ -57,7 +61,7 @@ namespace WpfApp1.PageMain
 			{
 				MessageBox.Show("Ошибка " + Ex.Message.ToString() + "Критическая работа приложения!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
 				Capth capth = new Capth();
-				capth.Show();
+				capth.ShowDialog();
 			}
 		}
 

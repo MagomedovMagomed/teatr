@@ -156,10 +156,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageMain\Catch2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PageMain\CreateAcc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -184,9 +180,6 @@
     </Compile>
     <Compile Include="PageMain\Capth.xaml.cs">
       <DependentUpon>Capth.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PageMain\Catch2.xaml.cs">
-      <DependentUpon>Catch2.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageMain\CreateAcc.xaml.cs">
       <DependentUpon>CreateAcc.xaml</DependentUpon>

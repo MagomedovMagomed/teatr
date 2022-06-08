@@ -30,20 +30,10 @@ namespace WpfApp1.PageAdmin
             Poin.ItemsSource = Entities.GetContext().Pointer.ToList();
             Zanr.ItemsSource = Entities.GetContext().Zanr.ToList();
             DataContext = _currentSpec;
-            //if (specspec != null)
-            //{
-            //    this._currentSpec = specspec;
-            //    Post.Text = _currentSpec.id_post.ToString();
-            //    Screen.Text = _currentSpec.id_scen.ToString();
-            //    Pointer.Text = _currentSpec.id_xydoz.ToString();
-            //    Zanr.Text = _currentSpec.id_zanr.ToString();
-            //}
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            var timespec = new TimeSpan(0, 0, 1);
-            var timetime = _currentSpec.Time;
             StringBuilder error = new StringBuilder();
 
             var zanr = Zanr.SelectedItem as Zanr;
@@ -79,7 +69,7 @@ namespace WpfApp1.PageAdmin
 
             if (string.IsNullOrEmpty(_currentSpec.Nazvanie))
                 error.AppendLine("Укажите название спектакля");
-            if (timetime > timespec)
+            if (_currentSpec.Time < 0)
                 error.AppendLine("Укажите продолжительность спектакля");
             if (id_post == 0)
                 error.AppendLine("Выберите постановщика");

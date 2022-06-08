@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,9 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfApp1.ApplicationData;
 using WpfApp1.PageMain;
-
+using WpfApp1.ApplicationData;
+using System.Windows.Threading;
+using System.Windows.Navigation;
 
 namespace WpfApp1.PageMain
 {
@@ -23,11 +23,34 @@ namespace WpfApp1.PageMain
 	/// </summary>
 	public partial class Capth : Window
 	{
+		private int time = 10;
+		private DispatcherTimer timer;
+		Random rnd = new Random();
+		private void Timer_Tick(object sender, EventArgs e)
+		{
+			if (time > 10)
+			{
+				time--;
+			}
+			else
+			{
+				Open.IsEnabled = true;
+				timer.Stop();
+			}
+		}
+		public void Timer()
+		{
+			timer = new DispatcherTimer();
+			timer.Interval = new TimeSpan(0, 0, 10);
+			timer.Tick += Timer_Tick;
+			timer.Start();
+			Open.IsEnabled = false;
+		}
 		public Capth()
 		{
 			InitializeComponent();
-			Random rnd = new Random();
-			capt.Content = (char)rnd.Next('\u0041', '\u007A') + ""+ (char)rnd.Next('\u0041', '\u007A') + ""+ (char)rnd.Next('\u0041', '\u007A') + ""+ (char)rnd.Next('\u0041', '\u007A');
+
+			capt.Content = (char)rnd.Next('\u0041', '\u007A') + "" + (char)rnd.Next('\u0041', '\u007A') + "" + (char)rnd.Next('\u0041', '\u007A') + "" + (char)rnd.Next('\u0041', '\u007A');
 		}
 
 		private void Open_Click(object sender, RoutedEventArgs e)
@@ -35,14 +58,13 @@ namespace WpfApp1.PageMain
 			if (captha.Text == capt.Content.ToString())
 			{
 				this.Close();
-				MessageBox.Show("Здравствуйте, Ученик " + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
-				AppFrame.frameMain.Navigate(new PageAdmin.AdminPage()); ;
 			}
 			else
 			{
-				this.Close();
-				WpfApp1.PageMain.Catch2 capth2 = new Catch2();
-				capth2.Show();
+				Timer();
+				capt.Content = "";
+				capt.Content = (char)rnd.Next('\u0041', '\u007A') + "" + (char)rnd.Next('\u0041', '\u007A') + "" + (char)rnd.Next('\u0041', '\u007A') + "" + (char)rnd.Next('\u0041', '\u007A');
+				MessageBox.Show("Кнопка заблокирована на 10с" + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
 			}
 		}
 	}
