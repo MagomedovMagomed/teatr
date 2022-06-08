@@ -8,7 +8,38 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Edit">
 
-    <Grid>
-
+    <Grid Background="#FF9C9C9C">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" Content="Фамилия"/>
+        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Имя"/>
+        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Отчество"/>
+        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Content="Логин"/>
+        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Content="Телефон"/>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" Content="Дата рождения"/>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Электронная почта"/>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Пароль"/>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Content="Роль"/>
+        <Button Name="Save" Click="Save_Click" Grid.Column="3" Content="Сохранить" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="46" Width="90"/>
+        <TextBox x:Name="Sun" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Text="{Binding Nazvanie}" Width="120"/>
+        <TextBox x:Name="Im" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Text="{Binding Time}" Width="120"/>
+        <TextBox x:Name="Fat" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Ostatok}" Width="120"/>
+        <TextBox x:Name="Log" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Text="{Binding Nazvanie}" Width="120"/>
+        <TextBox x:Name="teleph" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="4" Text="{Binding Time}" Width="120"/>
+        <TextBox x:Name="Birt" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Text="{Binding Ostatok}" Width="120"/>
+        <TextBox x:Name="Email" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Text="{Binding Nazvanie}" Width="120"/>
+        <TextBox x:Name="Pass" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Time}" Width="120"/>
+        <TextBox x:Name="Role" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Text="{Binding Ostatok}" Width="120"/>
     </Grid>
 </Page>
