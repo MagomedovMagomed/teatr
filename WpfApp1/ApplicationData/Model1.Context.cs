@@ -20,11 +20,13 @@ namespace WpfApp1.ApplicationData
             : base("name=Entities")
         {
         }
-        
+
         public static Entities GetContext()
         {
-            if(_context == null)
+            if (_context == null)
+            {
                 _context = new Entities();
+            }
             return _context;
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -30,6 +30,11 @@ namespace WpfApp1.PageAdmin
             Poin.ItemsSource = Entities.GetContext().Pointer.ToList();
             Zanr.ItemsSource = Entities.GetContext().Zanr.ToList();
             DataContext = _currentSpec;
+
+            if(specspec != null)
+            {
+                _currentSpec = specspec;
+            }
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -52,11 +57,11 @@ namespace WpfApp1.PageAdmin
                 id_wr = writer.id_Scen;
             }
             var post = Post.SelectedItem as Postanovshik;
-            var id_post = 0;
+            var id_pos = 0;
 
             if (post != null)
             {
-                id_post = post.id_post;
+                id_pos = post.id_post;
             }
             var point = Poin.SelectedItem as Pointer;
             var id_point = 0;
@@ -71,7 +76,7 @@ namespace WpfApp1.PageAdmin
                 error.AppendLine("Укажите название спектакля");
             if (_currentSpec.Time < 0)
                 error.AppendLine("Укажите продолжительность спектакля");
-            if (id_post == 0)
+            if (id_pos == 0)
                 error.AppendLine("Выберите постановщика");
             if(id_wr == 0)
                 error.AppendLine("Выберите сценариста");
@@ -82,26 +87,45 @@ namespace WpfApp1.PageAdmin
             if (_currentSpec.Ostatok < 0)
                 error.AppendLine("Укажите правильное количество билетов");
 
-            //_currentSpec.id_post = Post.Text;
-            //Screen.Text = _currentSpec.id_scen.ToString();
-            //Pointer.Text = _currentSpec.id_xydoz.ToString();
-            //Zanr.Text = _currentSpec.id_zanr.ToString();
-
+            
             if (error.Length > 0)
             {
                 MessageBox.Show(error.ToString());
                 return;
             }
-            if (_currentSpec.id_spectacle == 0)
-                Entities.GetContext().Spectacle.Add(_currentSpec);
             try
             {
-                Entities.GetContext().SaveChanges();
-                MessageBox.Show("Информация сохранена!");
+                Spectacle specobj = new Spectacle()
+                {
+                    Nazvanie = Nazv.Text,
+                    Time = Convert.ToInt32(Tim.Text),
+                    Ostatok = Convert.ToInt32(Ost.Text),
+                    id_post = id_pos,
+                    id_scen = id_wr,
+                    id_xydoz = id_point,
+                    id_zanr = id_zan,
+                };
+                if (_currentSpec.id_spectacle == 0)
+                    Entities.GetContext().Spectacle.Add(_currentSpec);
+                try
+                {
+                    _currentSpec.id_post = id_pos;
+                    _currentSpec.id_scen = id_wr;
+                    _currentSpec.id_xydoz = id_point;
+                    _currentSpec.id_zanr = id_zan;
+                   // AppContent.Model1.Spectacle.Add(specobj);
+                    AppContent.Model1.SaveChanges();
+                    MessageBox.Show("Информация сохранена!");
+                    AppFrame.frameMain.GoBack();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show("Ошибка при изменении!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }

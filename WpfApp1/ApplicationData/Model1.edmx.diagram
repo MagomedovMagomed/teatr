@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d116ec841b9a4bfa9fdd29c8844e03de" Name="Diagram1">
-        <EntityTypeShape EntityType="Model1.Akter" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model1.Akter_and_Spectacle" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model1.Pointer" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model1.Postanovshik" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model1.Role" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model1.Screenwriter" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model1.Spectacle" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model1.User" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model1.Zanr" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
-        <AssociationConnector Association="Model1.FK_Akter_and_Spectacle_Akter" ManuallyRouted="false" />
-        <AssociationConnector Association="Model1.FK_Akter_and_Spectacle_Spectacle" ManuallyRouted="false" />
-        <AssociationConnector Association="Model1.FK_Spectacle_Pointer" ManuallyRouted="false" />
-        <AssociationConnector Association="Model1.FK_Spectacle_Postanovshik" ManuallyRouted="false" />
-        <AssociationConnector Association="Model1.FK_User_Role" ManuallyRouted="false" />
-        <AssociationConnector Association="Model1.FK_Spectacle_Screenwriter" ManuallyRouted="false" />
-        <AssociationConnector Association="Model1.FK_Spectacle_Zanr" ManuallyRouted="false" />
+      <Diagram DiagramId="6ff75bd50d434c719ebfeeef51a718e7" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Akter" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Akter_and_Spectacle" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Pointer" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Postanovshik" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Screenwriter" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Spectacle" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Zanr" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Akter_and_Spectacle_Akter" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Akter_and_Spectacle_Spectacle" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Spectacle_Pointer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Spectacle_Postanovshik" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Spectacle_Screenwriter" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Spectacle_Zanr" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

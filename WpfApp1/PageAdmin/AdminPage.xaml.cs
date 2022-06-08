@@ -25,13 +25,13 @@ namespace WpfApp1.PageAdmin
 		public AdminPage()
 		{
 			InitializeComponent();
-			DBSpec.ItemsSource = Entities.GetContext().Spectacle.ToList();
-            DBUser.ItemsSource = Entities.GetContext().User.ToList();
+			//DBSpec.ItemsSource = Entities.GetContext().Spectacle.ToList();
+   //         DBUser.ItemsSource = Entities.GetContext().User.ToList();
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            AppFrame.frameMain.Navigate(new Add((sender as Button).DataContext as Spectacle));
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -41,7 +41,42 @@ namespace WpfApp1.PageAdmin
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
+            var SpectacleRemove = DBSpec.SelectedItems.Cast<Spectacle>().ToList();
+            var UserRemove = DBUser.SelectedItems.Cast<User>().ToList();
 
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {SpectacleRemove.Count() + UserRemove.Count()} элементов?", "Внимание", 
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Entities.GetContext().Spectacle.RemoveRange(SpectacleRemove);
+                    Entities.GetContext().User.RemoveRange(UserRemove);
+                    Entities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены!");
+
+                    DBSpec.ItemsSource = Entities.GetContext().Spectacle.ToList();
+                    DBUser.ItemsSource = Entities.GetContext().User.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                Entities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                DBSpec.ItemsSource = Entities.GetContext().Spectacle.ToList();
+                DBUser.ItemsSource = Entities.GetContext().User.ToList();
+            }
+        }
+
+        private void Edit_Click_1(object sender, RoutedEventArgs e)
+        {
+            //AppFrame.frameMain.Navigate(new Edit(null));
         }
     }
 }
