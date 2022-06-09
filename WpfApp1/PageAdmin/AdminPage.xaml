@@ -14,7 +14,7 @@
             <RowDefinition Height="80*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Button Content="Добавить Спектакль" Click="Add_Click" Name="Add" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="100"/>
+        <Button Content="Добавить Спектакль" Click="Add_Click" Name="Add" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="130"/>
         <Button Grid.Column="3" Click="Delete_Click" Content="Удалить" Name="Delete" HorizontalAlignment="Right" Margin="0,5,10,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="100"/>
         <TabControl Grid.Row="0">
             <TabItem Header="Спектакль" Grid.Column="0">
@@ -31,7 +31,7 @@
                             <DataGridTextColumn Header="Жанр" Binding="{Binding Zanr.Name}" Width="*"></DataGridTextColumn>
                             <DataGridTemplateColumn Width="auto">
                                 <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>  
+                                    <DataTemplate>
                                         <Button Content="Редактировать" Name="Edit" Click="Edit_Click"></Button>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -65,6 +65,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button Content="Добавить Пользователя" Click="Edit_Click_1" x:Name="Edit" HorizontalAlignment="Left" Margin="148,5,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="100"/>
+        <Button Content="Добавить Пользователя" Click="Edit_Click_1" x:Name="Edit" HorizontalAlignment="Left" Margin="182,5,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="130"/>
     </Grid>
 </Page>

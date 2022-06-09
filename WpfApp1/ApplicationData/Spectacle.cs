@@ -23,7 +23,7 @@ namespace WpfApp1.ApplicationData
         public int id_spectacle { get; set; }
         public int id_post { get; set; }
         public int id_scen { get; set; }
-        public Nullable<int> Time { get; set; }
+        public int Time { get; set; }
         public string Nazvanie { get; set; }
         public int id_xydoz { get; set; }
         public int id_zanr { get; set; }

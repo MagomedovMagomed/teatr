@@ -76,7 +76,7 @@ namespace WpfApp1.PageAdmin
 
         private void Edit_Click_1(object sender, RoutedEventArgs e)
         {
-            //AppFrame.frameMain.Navigate(new Edit(null));
+            AppFrame.frameMain.Navigate(new Edit(null));
         }
     }
 }
