@@ -13,15 +13,35 @@
             <ListView Name="Spectacle" Width="796">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Height="450">
+                        <Grid Height="230">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="150"></RowDefinition>
-                                <RowDefinition Height="150"></RowDefinition>
-                                <RowDefinition Height="150"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <TextBlock Text="{Binding Nazvanie}" VerticalAlignment="Center" TextAlignment="Center" Width="200" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="26" Grid.Row="0"></TextBlock>
-                            <TextBlock Text="{Binding Time}" Grid.Row="1" HorizontalAlignment="Center" FontSize="11" FontWeight="Bold"></TextBlock>
-                            <TextBlock Text="{Binding Ostatok}" Grid.Row="2" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Content="Название"></Label>
+                            <Label Grid.Row="1" Content="Продолжительность"></Label>
+                            <Label Grid.Row="2" Content="Постановщик"></Label>
+                            <Label Grid.Row="3" Content="Сценарист"></Label>
+                            <Label Grid.Row="4" Content="Художник"></Label>
+                            <Label Grid.Row="5" Content="Жанр"></Label>
+                            <Label Grid.Row="6" Content="Количество оставшихся билетов"></Label>
+                            <TextBlock Text="{Binding Nazvanie}" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Center" Width="auto" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="26" Grid.Row="0"></TextBlock>
+                            <TextBlock Text="{Binding Time}" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Width="auto" FontSize="11" FontWeight="Bold"></TextBlock>
+                            <TextBlock Text="{Binding Postanovshik.Name}" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" TextAlignment="Center" Width="auto" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="26"></TextBlock>
+                            <TextBlock Text="{Binding Screenwriter.Name}" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" Width="auto" FontSize="11" FontWeight="Bold"></TextBlock>
+                            <TextBlock Text="{Binding Pointer.Name}" Grid.Column="2" Grid.Row="5" FontSize="14" Width="auto" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{Binding Zanr.Name}" Grid.Column="2" Grid.Row="6" FontSize="14" Width="auto" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{Binding Ostatok}" Grid.Column="2" Grid.Row="2" FontSize="14" Width="auto" HorizontalAlignment="Center"></TextBlock>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -25,10 +25,10 @@ namespace WpfApp1.PageAdmin
         public Add(Spectacle specspec) 
         {
             InitializeComponent();
-            Post.ItemsSource = Entities.GetContext().Postanovshik.ToList();
-            Screen.ItemsSource = Entities.GetContext().Screenwriter.ToList();
-            Poin.ItemsSource = Entities.GetContext().Pointer.ToList();
-            Zanr.ItemsSource = Entities.GetContext().Zanr.ToList();
+            Post.ItemsSource = Entities1.GetContext().Postanovshik.ToList();
+            Screen.ItemsSource = Entities1.GetContext().Screenwriter.ToList();
+            Poin.ItemsSource = Entities1.GetContext().Pointer.ToList();
+            Zanr.ItemsSource = Entities1.GetContext().Zanr.ToList();
             DataContext = _currentSpec;
 
             if(specspec != null)
@@ -106,14 +106,14 @@ namespace WpfApp1.PageAdmin
                     id_zanr = id_zan,
                 };
                 if (_currentSpec.id_spectacle == 0)
-                    Entities.GetContext().Spectacle.Add(_currentSpec);
+                    Entities1.GetContext().Spectacle.Add(_currentSpec);
                 try
                 {
                     _currentSpec.id_post = id_pos;
                     _currentSpec.id_scen = id_wr;
                     _currentSpec.id_xydoz = id_point;
                     _currentSpec.id_zanr = id_zan;
-                   // AppContent.Model1.Spectacle.Add(specobj);
+                    AppContent.Model1.Spectacle.Add(specobj);
                     AppContent.Model1.SaveChanges();
                     MessageBox.Show("Информация сохранена!");
                     AppFrame.frameMain.GoBack();

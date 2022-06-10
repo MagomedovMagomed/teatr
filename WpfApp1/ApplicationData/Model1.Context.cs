@@ -13,13 +13,23 @@ namespace WpfApp1.ApplicationData
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class Entities1 : DbContext
     {
-        public Entities()
+        private static Entities1 _context;
+        public Entities1()
             : base("name=Entities")
         {
         }
-    
+
+        public static Entities1 GetContext()
+        {
+            if (_context == null)
+            {
+                _context = new Entities1();
+            }
+            return _context;
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

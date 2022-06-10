@@ -38,11 +38,9 @@ namespace WpfApp1.PageClient
 
 		public void UpdateSpectacle()
         {
-			var CurrentSpec = Entities.GetContext().Spectacle.ToList();
+			var CurrentSpec = Entities1.GetContext().Spectacle.ToList();
 
-
-			
-			if(Filtr.SelectedIndex > 0)
+			if (Filtr.SelectedIndex > 0)
             {
 				var tesr = Filtr.SelectedItem.ToString();
 				CurrentSpec = CurrentSpec.Where(p => p.Zanr.Name == Filtr.SelectedItem.ToString()).ToList();

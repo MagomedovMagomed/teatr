@@ -49,13 +49,13 @@ namespace WpfApp1.PageAdmin
             {
                 try
                 {
-                    Entities.GetContext().Spectacle.RemoveRange(SpectacleRemove);
-                    Entities.GetContext().User.RemoveRange(UserRemove);
-                    Entities.GetContext().SaveChanges();
+                    Entities1.GetContext().Spectacle.RemoveRange(SpectacleRemove);
+                    Entities1.GetContext().User.RemoveRange(UserRemove);
+                    Entities1.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены!");
 
-                    DBSpec.ItemsSource = Entities.GetContext().Spectacle.ToList();
-                    DBUser.ItemsSource = Entities.GetContext().User.ToList();
+                    DBSpec.ItemsSource = Entities1.GetContext().Spectacle.ToList();
+                    DBUser.ItemsSource = Entities1.GetContext().User.ToList();
                 }
                 catch (Exception ex)
                 {
@@ -68,9 +68,9 @@ namespace WpfApp1.PageAdmin
         {
             if (Visibility == Visibility.Visible)
             {
-                Entities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                DBSpec.ItemsSource = Entities.GetContext().Spectacle.ToList();
-                DBUser.ItemsSource = Entities.GetContext().User.ToList();
+                //Entities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                DBSpec.ItemsSource = Entities1.GetContext().Spectacle.ToList();
+                DBUser.ItemsSource = Entities1.GetContext().User.ToList();
             }
         }
 

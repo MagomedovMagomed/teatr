@@ -8,7 +8,7 @@ namespace WpfApp1.ApplicationData
 {
 	class AppContent
 	{
-		public static Entities Model1;
+		public static Entities1 Model1;
         //private static Entities _context;
         //public Entities()
         //    : base("name=Entities")

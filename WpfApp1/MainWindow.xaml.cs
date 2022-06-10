@@ -26,7 +26,7 @@ namespace WpfApp1
 		public MainWindow()
 		{
 			InitializeComponent();
-			AppContent.Model1 = new Entities();
+			AppContent.Model1 = new Entities1();
 			AppFrame.frameMain = FrmMain;
 			FrmMain.Navigate(new Login());
 		}

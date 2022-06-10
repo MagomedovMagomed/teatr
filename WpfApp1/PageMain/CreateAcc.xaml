@@ -35,7 +35,7 @@
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
                 <Label Margin="5px" Content="Введите дату рождения:" Width="180"/>
-                <DatePicker Margin="5px" x:Name="Birth" Width="180" DisplayDateStart="" Text="DisplayDate" IsTodayHighlighted="False"/>
+                <DatePicker Margin="5px" SelectedDateChanged="Birth_SelectedDateChanged" x:Name="Birth" Width="180" DisplayDateStart="" Text="DisplayDate" IsTodayHighlighted="False"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
                 <Label Margin="5px" Content="Введите электронную почту:" Width="180"/>

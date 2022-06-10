@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,12 @@ namespace WpfApp1.PageMain
 	/// </summary>
 	public partial class CreateAcc : Page
 	{
+		bool isValid(string email)
+		{
+			string pattern = "[.\\-_a-z0-9]+@([a-z0-9][\\-a-z0-9]+\\.)+[a-z]{2,6}";
+			Match isMatch = Regex.Match(email, pattern, RegexOptions.IgnoreCase);
+			return isMatch.Success;
+		}
 		public CreateAcc()
 		{
 			InitializeComponent();
@@ -52,6 +59,16 @@ namespace WpfApp1.PageMain
 				MessageBox.Show("Пользователь с таким логином есть!", "Уведомление",MessageBoxButton.OK, MessageBoxImage.Information);
 				return;
 			}
+			if(isValid(EMail.Text) == false)
+            {
+				MessageBox.Show("Укажите правильно Email пользователя");
+				return;
+			}
+			if (Convert.ToDouble(Telepho) < 10000000000)
+			{
+				MessageBox.Show("Укажите правильно телефон");
+				return;
+			}
 			try
 			{
 				User userObj = new User()
@@ -62,7 +79,7 @@ namespace WpfApp1.PageMain
 					Name = Name.Text,
 					Surename = Surename.Text,
 					Father_name = Father_name.Text,
-					Telephon = Telepho.Text,
+					Teleph = Convert.ToInt32(Telepho.Text),
 					Data_Birth = Birth.DisplayDate,
 					Email = EMail.Text
 				};
@@ -76,5 +93,18 @@ namespace WpfApp1.PageMain
 				MessageBox.Show("Ошибка при добавлении данных", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
-	}
+
+        private void Birth_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+			if (Birth.SelectedDate > DateTime.Now.AddYears(-18) || Birth.SelectedDate < DateTime.Now.AddYears(-99))
+			{
+				MessageBox.Show("Регистрироваться могут только люди страше 18 и младше 99", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+				Create.IsEnabled = false;
+			}
+			else
+			{
+				Create.IsEnabled = true;
+			}
+		}
+    }
 }

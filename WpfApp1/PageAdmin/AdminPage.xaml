@@ -50,7 +50,7 @@
                             <DataGridTextColumn Header="Фамилия" Binding="{Binding Surename}" Width="*"></DataGridTextColumn>
                             <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
                             <DataGridTextColumn Header="Отчество" Binding="{Binding Father_name}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Телефон" Binding="{Binding Telephon}" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Телефон" Binding="{Binding Teleph}" Width="*"></DataGridTextColumn>
                             <DataGridTextColumn Header="Дата рождения" Binding="{Binding Data_Birth}" Width="*"></DataGridTextColumn>
                             <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"></DataGridTextColumn>
                             <DataGridTemplateColumn Width="auto">

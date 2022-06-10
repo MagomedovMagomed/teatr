@@ -21,9 +21,9 @@ namespace WpfApp1.ApplicationData
         public string Surename { get; set; }
         public string Name { get; set; }
         public string Father_name { get; set; }
+        public decimal Teleph { get; set; }
         public System.DateTime Data_Birth { get; set; }
         public string Email { get; set; }
-        public decimal Teleph { get; set; }
     
         public virtual Role Role { get; set; }
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,12 @@ namespace WpfApp1.PageAdmin
     /// </summary>
     public partial class Edit : Page
     {
+        bool isValid(string email)
+        {
+            string pattern = "[.\\-_a-z0-9]+@([a-z0-9][\\-a-z0-9]+\\.)+[a-z]{2,6}";
+            Match isMatch = Regex.Match(email, pattern, RegexOptions.IgnoreCase);
+            return isMatch.Success;
+        }
         private User _currentUser = new User();
         public Edit(User useruser)
         {
@@ -36,23 +43,19 @@ namespace WpfApp1.PageAdmin
         {
             StringBuilder error = new StringBuilder();
 
-            var dateString = "1/1/1900";
-            DateTime date1 = DateTime.Parse(dateString,
-                                      System.Globalization.CultureInfo.InvariantCulture);
-
             if (string.IsNullOrEmpty(_currentUser.Name))
                 error.AppendLine("Укажите Имя пользователя");
             if (string.IsNullOrEmpty(_currentUser.Surename))
                 error.AppendLine("Укажите Фамилию пользователя");
             if (string.IsNullOrEmpty(_currentUser.Father_name))
                 error.AppendLine("Укажите Отчество пользователя");
-            if (_currentUser.Teleph < 0)
+            if (_currentUser.Teleph < 10000000000)
                 error.AppendLine("Укажите телефон пользователя");
             if (string.IsNullOrEmpty(_currentUser.Login))
                 error.AppendLine("Укажите Логин пользователя");
-            if (string.IsNullOrEmpty(_currentUser.Email))
-                error.AppendLine("Укажите Email пользователя");
-            if (string.IsNullOrEmpty(_currentUser.idRole.ToString()))
+            if (string.IsNullOrEmpty(_currentUser.Email) || isValid(Email.Text) == false)
+                error.AppendLine("Укажите правильно Email пользователя");
+            if (_currentUser.idRole > 3)
                 error.AppendLine("Укажите Роль пользователя");
             if (string.IsNullOrEmpty(_currentUser.Password))
                 error.AppendLine("Укажите Пароль пользователя");
@@ -72,15 +75,15 @@ namespace WpfApp1.PageAdmin
                     Name = Im.Text,
                     Surename = Sun.Text,
                     Father_name = Fat.Text,
-                    Telephon = teleph.Text,
+                    Teleph = Convert.ToInt32(teleph.Text),
                     Data_Birth = Birt.DisplayDate,
                     Email = Email.Text
                 };
                 if (_currentUser.id == 0)
-                    Entities.GetContext().User.Add(_currentUser);
+                    Entities1.GetContext().User.Add(_currentUser);
                 try
                 {
-                    // AppContent.Model1.Spectacle.Add(specobj);
+                    AppContent.Model1.User.Add(userObj);
                     AppContent.Model1.SaveChanges();
                     MessageBox.Show("Информация сохранена!");
                     AppFrame.frameMain.GoBack();
@@ -106,8 +109,6 @@ namespace WpfApp1.PageAdmin
             else
             {
                 Save.IsEnabled=true;
-                teleph.Background = Brushes.LightGreen;
-                teleph.Background = Brushes.Green;
             }
         }
     }
