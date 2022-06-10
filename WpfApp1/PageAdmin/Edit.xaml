@@ -37,7 +37,7 @@
         <TextBox x:Name="Fat" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Father_name}" Width="120"/>
         <TextBox x:Name="Log" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Text="{Binding Login}" Width="120"/>
         <TextBox x:Name="teleph" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="4" Text="{Binding Teleph}" Width="120"/>
-        <TextBox x:Name="Email" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Text="{Binding Email}" Width="120"/>
+        <TextBox x:Name="Emal" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Text="{Binding Email}" Width="120"/>
         <TextBox x:Name="Pass" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Password}" Width="120"/>
         <TextBox x:Name="Role" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Text="{Binding idRole}" Width="120"/>
         <DatePicker x:Name="Birt" SelectedDateChanged="Birt_SelectedDateChanged" Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="0" VerticalAlignment="Center" Width="120"/>

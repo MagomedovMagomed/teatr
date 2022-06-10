@@ -59,17 +59,17 @@ namespace WpfApp1.PageMain
 				MessageBox.Show("Пользователь с таким логином есть!", "Уведомление",MessageBoxButton.OK, MessageBoxImage.Information);
 				return;
 			}
-			if(isValid(EMail.Text) == false)
+            if (isValid(EMail.Text) == false)
             {
-				MessageBox.Show("Укажите правильно Email пользователя");
-				return;
-			}
-			if (Convert.ToDouble(Telepho) < 10000000000)
-			{
-				MessageBox.Show("Укажите правильно телефон");
-				return;
-			}
-			try
+                MessageBox.Show("Укажите правильно Email пользователя");
+                return;
+            }
+            if (Telepho.Text.Length != 11)
+            {
+                MessageBox.Show("Укажите правильно телефон");
+                return;
+            }
+            try
 			{
 				User userObj = new User()
 				{
@@ -79,11 +79,10 @@ namespace WpfApp1.PageMain
 					Name = Name.Text,
 					Surename = Surename.Text,
 					Father_name = Father_name.Text,
-					Teleph = Convert.ToInt32(Telepho.Text),
+					Teleph = Convert.ToInt64(Telepho.Text),
 					Data_Birth = Birth.DisplayDate,
 					Email = EMail.Text
 				};
-
 				AppContent.Model1.User.Add(userObj);
 				AppContent.Model1.SaveChanges();
 				MessageBox.Show("Данные успешно добавлены", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);

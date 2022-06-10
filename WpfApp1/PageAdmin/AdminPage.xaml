@@ -56,7 +56,7 @@
                             <DataGridTemplateColumn Width="auto">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Content="Редактировать" Name="Edit" Click="Edit_Click"></Button>
+                                        <Button Content="Редактировать" Name="Edit" Click="Edit_Click_2"></Button>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>

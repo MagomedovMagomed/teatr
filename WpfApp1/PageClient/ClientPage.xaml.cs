@@ -32,7 +32,8 @@ namespace WpfApp1.PageClient
             }
 
 			Filtr.SelectedIndex = 0;
-
+			var _currentSpec = Entities1.GetContext().Spectacle.ToList();
+			Spectacle.ItemsSource = _currentSpec;
 			UpdateSpectacle();
 		}
 

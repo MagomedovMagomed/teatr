@@ -10,38 +10,38 @@
 
     <Grid Background="#FFE4DFDF">
         <StackPanel Orientation="Horizontal" Margin="0,60,0,0">
-            <ListView Name="Spectacle" Width="796">
+            <ListView Name="Spectacle" Width="800" VirtualizingPanel.ScrollUnit="Pixel">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Height="230">
+                        <Grid Height="220">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="50"></RowDefinition>
-                                <RowDefinition Height="30"></RowDefinition>
-                                <RowDefinition Height="30"></RowDefinition>
-                                <RowDefinition Height="30"></RowDefinition>
-                                <RowDefinition Height="30"></RowDefinition>
-                                <RowDefinition Height="30"></RowDefinition>
-                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="40*"></RowDefinition>
+                                <RowDefinition Height="30*"></RowDefinition>
+                                <RowDefinition Height="30*"></RowDefinition>
+                                <RowDefinition Height="30*"></RowDefinition>
+                                <RowDefinition Height="30*"></RowDefinition>
+                                <RowDefinition Height="30*"></RowDefinition>
+                                <RowDefinition Height="30*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"></ColumnDefinition>
-                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
                                 <ColumnDefinition Width="auto"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Row="0" Content="Название"></Label>
-                            <Label Grid.Row="1" Content="Продолжительность"></Label>
-                            <Label Grid.Row="2" Content="Постановщик"></Label>
-                            <Label Grid.Row="3" Content="Сценарист"></Label>
-                            <Label Grid.Row="4" Content="Художник"></Label>
-                            <Label Grid.Row="5" Content="Жанр"></Label>
-                            <Label Grid.Row="6" Content="Количество оставшихся билетов"></Label>
-                            <TextBlock Text="{Binding Nazvanie}" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Center" Width="auto" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="26" Grid.Row="0"></TextBlock>
-                            <TextBlock Text="{Binding Time}" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Width="auto" FontSize="11" FontWeight="Bold"></TextBlock>
-                            <TextBlock Text="{Binding Postanovshik.Name}" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" TextAlignment="Center" Width="auto" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="26"></TextBlock>
-                            <TextBlock Text="{Binding Screenwriter.Name}" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" Width="auto" FontSize="11" FontWeight="Bold"></TextBlock>
-                            <TextBlock Text="{Binding Pointer.Name}" Grid.Column="2" Grid.Row="5" FontSize="14" Width="auto" HorizontalAlignment="Center"></TextBlock>
-                            <TextBlock Text="{Binding Zanr.Name}" Grid.Column="2" Grid.Row="6" FontSize="14" Width="auto" HorizontalAlignment="Center"></TextBlock>
-                            <TextBlock Text="{Binding Ostatok}" Grid.Column="2" Grid.Row="2" FontSize="14" Width="auto" HorizontalAlignment="Center"></TextBlock>
+                            <Label Grid.Column="1" Grid.Row="0" Content="Название" FontWeight="Bold" FontSize="22"></Label>
+                            <Label Grid.Column="1" Grid.Row="1" Content="Продолжительность" FontWeight="Bold"></Label>
+                            <Label Grid.Column="1" Grid.Row="2" Content="Постановщик" FontWeight="Bold"></Label>
+                            <Label Grid.Column="1" Grid.Row="3" Content="Сценарист" FontWeight="Bold"></Label>
+                            <Label Grid.Column="1" Grid.Row="4" Content="Художник" FontWeight="Bold"></Label>
+                            <Label Grid.Column="1" Grid.Row="5" Content="Жанр" FontWeight="Bold"></Label>
+                            <Label Grid.Column="1" Grid.Row="6" Content="Количество оставшихся билетов" FontWeight="Bold"></Label>
+                            <TextBlock Text="{Binding Nazvanie}" Grid.Column="2" Width="auto" FontSize="22" Grid.Row="0"></TextBlock>
+                            <TextBlock Text="{Binding Time}" Grid.Column="2" Grid.Row="1" Width="auto" FontSize="14"></TextBlock>
+                            <TextBlock Text="{Binding Postanovshik.Name}" Grid.Column="2" Grid.Row="3" Width="auto" FontSize="14"></TextBlock>
+                            <TextBlock Text="{Binding Screenwriter.Name}" Grid.Column="2" Grid.Row="4" Width="auto" FontSize="14"></TextBlock>
+                            <TextBlock Text="{Binding Pointer.Name}" Grid.Column="2" Grid.Row="5" FontSize="14" Width="auto"></TextBlock>
+                            <TextBlock Text="{Binding Zanr.Name}" Grid.Column="2" Grid.Row="6" FontSize="14" Width="auto"></TextBlock>
+                            <TextBlock Text="{Binding Ostatok}" Grid.Column="2" Grid.Row="2" FontSize="14" Width="auto"></TextBlock>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>

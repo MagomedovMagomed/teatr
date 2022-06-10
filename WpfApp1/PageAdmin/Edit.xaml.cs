@@ -49,13 +49,13 @@ namespace WpfApp1.PageAdmin
                 error.AppendLine("Укажите Фамилию пользователя");
             if (string.IsNullOrEmpty(_currentUser.Father_name))
                 error.AppendLine("Укажите Отчество пользователя");
-            if (_currentUser.Teleph < 10000000000)
+            if (teleph.Text.Length < 11)
                 error.AppendLine("Укажите телефон пользователя");
             if (string.IsNullOrEmpty(_currentUser.Login))
                 error.AppendLine("Укажите Логин пользователя");
-            if (string.IsNullOrEmpty(_currentUser.Email) || isValid(Email.Text) == false)
+            if (string.IsNullOrEmpty(_currentUser.Email) || isValid(Emal.Text) == false)
                 error.AppendLine("Укажите правильно Email пользователя");
-            if (_currentUser.idRole > 3)
+            if (_currentUser.idRole >= 3)
                 error.AppendLine("Укажите Роль пользователя");
             if (string.IsNullOrEmpty(_currentUser.Password))
                 error.AppendLine("Укажите Пароль пользователя");
@@ -71,13 +71,13 @@ namespace WpfApp1.PageAdmin
                 {
                     Login = Log.Text,
                     Password = Pass.Text,
-                    idRole = 2,
+                    idRole = Convert.ToInt32(Role.Text),
                     Name = Im.Text,
                     Surename = Sun.Text,
                     Father_name = Fat.Text,
-                    Teleph = Convert.ToInt32(teleph.Text),
+                    Teleph = Convert.ToInt64(teleph.Text),
                     Data_Birth = Birt.DisplayDate,
-                    Email = Email.Text
+                    Email = Emal.Text
                 };
                 if (_currentUser.id == 0)
                     Entities1.GetContext().User.Add(_currentUser);
@@ -101,14 +101,14 @@ namespace WpfApp1.PageAdmin
 
         private void Birt_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(Birt.SelectedDate > DateTime.Now.AddYears(-18) || Birt.SelectedDate < DateTime.Now.AddYears(-99))
+            if (Birt.SelectedDate > DateTime.Now.AddYears(-18) || Birt.SelectedDate < DateTime.Now.AddYears(-199))
             {
-                MessageBox.Show("Регистрироваться могут только люди страше 18 и младше 99", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Регистрироваться могут только люди страше 18 и младше 199", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 Save.IsEnabled = false;
             }
             else
             {
-                Save.IsEnabled=true;
+                Save.IsEnabled = true;
             }
         }
     }

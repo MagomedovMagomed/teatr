@@ -78,5 +78,10 @@ namespace WpfApp1.PageAdmin
         {
             AppFrame.frameMain.Navigate(new Edit(null));
         }
+
+        private void Edit_Click_2(object sender, RoutedEventArgs e)
+        {
+            AppFrame.frameMain.Navigate(new Edit((sender as Button).DataContext as User));
+        }
     }
 }
