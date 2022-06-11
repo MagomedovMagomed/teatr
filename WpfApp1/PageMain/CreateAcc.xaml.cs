@@ -95,9 +95,9 @@ namespace WpfApp1.PageMain
 
         private void Birth_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-			if (Birth.SelectedDate > DateTime.Now.AddYears(-18) || Birth.SelectedDate < DateTime.Now.AddYears(-99))
+			if (Birth.SelectedDate > DateTime.Now.AddYears(-18) || Birth.SelectedDate < DateTime.Now.AddYears(-199))
 			{
-				MessageBox.Show("Регистрироваться могут только люди страше 18 и младше 99", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+				MessageBox.Show("Регистрироваться могут только люди страше 18 и младше 199", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 				Create.IsEnabled = false;
 			}
 			else

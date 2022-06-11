@@ -30,7 +30,8 @@ namespace WpfApp1.PageClient
 			{
 				Filtr.Items.Add(i.Name);
             }
-
+			Sort.Items.Add("По цене");
+			Sort.SelectedIndex = 0;
 			Filtr.SelectedIndex = 0;
 			var _currentSpec = Entities1.GetContext().Spectacle.ToList();
 			Spectacle.ItemsSource = _currentSpec;

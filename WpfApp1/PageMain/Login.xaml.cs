@@ -70,10 +70,10 @@ namespace WpfApp1.PageMain
 			AppFrame.frameMain.Navigate(new CreateAcc());
 		}
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
 			AppFrame.frameMain.Navigate(new PageClient.ClientPage());
-			MessageBox.Show("Здравствуйте, Рома " + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+			MessageBox.Show("Здравствуйте, Гость " + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 		}
     }
 }

@@ -15,12 +15,11 @@ namespace WpfApp1.ApplicationData
     
     public partial class Entities1 : DbContext
     {
-        private static Entities1 _context;
         public Entities1()
             : base("name=Entities")
         {
         }
-
+        private static Entities1 _context;
         public static Entities1 GetContext()
         {
             if (_context == null)
@@ -35,8 +34,6 @@ namespace WpfApp1.ApplicationData
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Akter> Akter { get; set; }
-        public virtual DbSet<Akter_and_Spectacle> Akter_and_Spectacle { get; set; }
         public virtual DbSet<Pointer> Pointer { get; set; }
         public virtual DbSet<Postanovshik> Postanovshik { get; set; }
         public virtual DbSet<Role> Role { get; set; }

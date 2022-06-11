@@ -28,7 +28,6 @@
         <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" Content="Художник"/>
         <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Жанр"/>
         <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Количество оставшихся билетов"/>
-        <Image Grid.Column="2" HorizontalAlignment="Center" Margin="-70 -70 0 0" Grid.Row="3" VerticalAlignment="Center" Height="80" Width="80"/>
         <Button Name="Save" Click="Save_Click" Grid.Column="3" Content="Сохранить" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="46" Width="90"/>
         <ComboBox Name="Post" SelectedItem="{Binding Postanovshik.Name}" Grid.Column="1" HorizontalAlignment="Center" SelectedValuePath="id_post" DisplayMemberPath="Name" Grid.Row="2" VerticalAlignment="Center" Width="120"/>
         <ComboBox Name="Screen" SelectedItem="{Binding Screenwriter.Name}" Grid.Column="1" HorizontalAlignment="Center" SelectedValuePath="id_Scen" DisplayMemberPath="Name" Grid.Row="3" VerticalAlignment="Center" Width="120"/>

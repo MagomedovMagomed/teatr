@@ -5,23 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Akter">
-          <Key>
-            <PropertyRef Name="id_akter" />
-          </Key>
-          <Property Name="id_akter" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Familia" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Akter and Spectacle">
-          <Key>
-            <PropertyRef Name="id_spec" />
-            <PropertyRef Name="id_akter" />
-          </Key>
-          <Property Name="id_spec" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_akter" Type="int" Nullable="false" />
-          <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="Pointer">
           <Key>
             <PropertyRef Name="id_xyd" />
@@ -64,8 +47,8 @@
           <Property Name="Nazvanie" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="id_xydoz" Type="int" Nullable="false" />
           <Property Name="id_zanr" Type="int" Nullable="false" />
-          <Property Name="Poster" Type="image" />
           <Property Name="Ostatok" Type="int" Nullable="false" />
+          <Property Name="Poster" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -89,30 +72,6 @@
           <Property Name="id_zanr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Akter and Spectacle_Akter">
-          <End Role="Akter" Type="Self.Akter" Multiplicity="1" />
-          <End Role="Akter and Spectacle" Type="Self.Akter and Spectacle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Akter">
-              <PropertyRef Name="id_akter" />
-            </Principal>
-            <Dependent Role="Akter and Spectacle">
-              <PropertyRef Name="id_akter" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Akter and Spectacle_Spectacle">
-          <End Role="Spectacle" Type="Self.Spectacle" Multiplicity="1" />
-          <End Role="Akter and Spectacle" Type="Self.Akter and Spectacle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Spectacle">
-              <PropertyRef Name="id_spectacle" />
-            </Principal>
-            <Dependent Role="Akter and Spectacle">
-              <PropertyRef Name="id_spec" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Spectacle_Pointer">
           <End Role="Pointer" Type="Self.Pointer" Multiplicity="1" />
           <End Role="Spectacle" Type="Self.Spectacle" Multiplicity="*" />
@@ -174,8 +133,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище ModelContainer">
-          <EntitySet Name="Akter" EntityType="Self.Akter" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Akter and Spectacle" EntityType="Self.Akter and Spectacle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pointer" EntityType="Self.Pointer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Postanovshik" EntityType="Self.Postanovshik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
@@ -183,14 +140,6 @@
           <EntitySet Name="Spectacle" EntityType="Self.Spectacle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zanr" EntityType="Self.Zanr" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Akter and Spectacle_Akter" Association="Self.FK_Akter and Spectacle_Akter">
-            <End Role="Akter" EntitySet="Akter" />
-            <End Role="Akter and Spectacle" EntitySet="Akter and Spectacle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Akter and Spectacle_Spectacle" Association="Self.FK_Akter and Spectacle_Spectacle">
-            <End Role="Spectacle" EntitySet="Spectacle" />
-            <End Role="Akter and Spectacle" EntitySet="Akter and Spectacle" />
-          </AssociationSet>
           <AssociationSet Name="FK_Spectacle_Pointer" Association="Self.FK_Spectacle_Pointer">
             <End Role="Pointer" EntitySet="Pointer" />
             <End Role="Spectacle" EntitySet="Spectacle" />
@@ -217,26 +166,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Akter">
-          <Key>
-            <PropertyRef Name="id_akter" />
-          </Key>
-          <Property Name="id_akter" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Familia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Akter_and_Spectacle" Relationship="Self.FK_Akter_and_Spectacle_Akter" FromRole="Akter" ToRole="Akter_and_Spectacle" />
-        </EntityType>
-        <EntityType Name="Akter_and_Spectacle">
-          <Key>
-            <PropertyRef Name="id_spec" />
-            <PropertyRef Name="id_akter" />
-          </Key>
-          <Property Name="id_spec" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_akter" Type="Int32" Nullable="false" />
-          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Akter" Relationship="Self.FK_Akter_and_Spectacle_Akter" FromRole="Akter_and_Spectacle" ToRole="Akter" />
-          <NavigationProperty Name="Spectacle" Relationship="Self.FK_Akter_and_Spectacle_Spectacle" FromRole="Akter_and_Spectacle" ToRole="Spectacle" />
-        </EntityType>
         <EntityType Name="Pointer">
           <Key>
             <PropertyRef Name="id_xyd" />
@@ -283,9 +212,8 @@
           <Property Name="Nazvanie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="id_xydoz" Type="Int32" Nullable="false" />
           <Property Name="id_zanr" Type="Int32" Nullable="false" />
-          <Property Name="Poster" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Ostatok" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Akter_and_Spectacle" Relationship="Self.FK_Akter_and_Spectacle_Spectacle" FromRole="Spectacle" ToRole="Akter_and_Spectacle" />
+          <Property Name="Poster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Pointer" Relationship="Self.FK_Spectacle_Pointer" FromRole="Spectacle" ToRole="Pointer" />
           <NavigationProperty Name="Postanovshik" Relationship="Self.FK_Spectacle_Postanovshik" FromRole="Spectacle" ToRole="Postanovshik" />
           <NavigationProperty Name="Screenwriter" Relationship="Self.FK_Spectacle_Screenwriter" FromRole="Spectacle" ToRole="Screenwriter" />
@@ -315,30 +243,6 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Spectacle" Relationship="Self.FK_Spectacle_Zanr" FromRole="Zanr" ToRole="Spectacle" />
         </EntityType>
-        <Association Name="FK_Akter_and_Spectacle_Akter">
-          <End Role="Akter" Type="Self.Akter" Multiplicity="1" />
-          <End Role="Akter_and_Spectacle" Type="Self.Akter_and_Spectacle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Akter">
-              <PropertyRef Name="id_akter" />
-            </Principal>
-            <Dependent Role="Akter_and_Spectacle">
-              <PropertyRef Name="id_akter" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Akter_and_Spectacle_Spectacle">
-          <End Role="Spectacle" Type="Self.Spectacle" Multiplicity="1" />
-          <End Role="Akter_and_Spectacle" Type="Self.Akter_and_Spectacle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Spectacle">
-              <PropertyRef Name="id_spectacle" />
-            </Principal>
-            <Dependent Role="Akter_and_Spectacle">
-              <PropertyRef Name="id_spec" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Spectacle_Pointer">
           <End Role="Pointer" Type="Self.Pointer" Multiplicity="1" />
           <End Role="Spectacle" Type="Self.Spectacle" Multiplicity="*" />
@@ -399,9 +303,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Akter" EntityType="Self.Akter" />
-          <EntitySet Name="Akter_and_Spectacle" EntityType="Self.Akter_and_Spectacle" />
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Pointer" EntityType="Self.Pointer" />
           <EntitySet Name="Postanovshik" EntityType="Self.Postanovshik" />
           <EntitySet Name="Role" EntityType="Self.Role" />
@@ -409,14 +311,6 @@
           <EntitySet Name="Spectacle" EntityType="Self.Spectacle" />
           <EntitySet Name="User" EntityType="Self.User" />
           <EntitySet Name="Zanr" EntityType="Self.Zanr" />
-          <AssociationSet Name="FK_Akter_and_Spectacle_Akter" Association="Self.FK_Akter_and_Spectacle_Akter">
-            <End Role="Akter" EntitySet="Akter" />
-            <End Role="Akter_and_Spectacle" EntitySet="Akter_and_Spectacle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Akter_and_Spectacle_Spectacle" Association="Self.FK_Akter_and_Spectacle_Spectacle">
-            <End Role="Spectacle" EntitySet="Spectacle" />
-            <End Role="Akter_and_Spectacle" EntitySet="Akter_and_Spectacle" />
-          </AssociationSet>
           <AssociationSet Name="FK_Spectacle_Pointer" Association="Self.FK_Spectacle_Pointer">
             <End Role="Pointer" EntitySet="Pointer" />
             <End Role="Spectacle" EntitySet="Spectacle" />
@@ -443,25 +337,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="Entities1">
-          <EntitySetMapping Name="Akter">
-            <EntityTypeMapping TypeName="Model.Akter">
-              <MappingFragment StoreEntitySet="Akter">
-                <ScalarProperty Name="id_akter" ColumnName="id_akter" />
-                <ScalarProperty Name="Familia" ColumnName="Familia" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Akter_and_Spectacle">
-            <EntityTypeMapping TypeName="Model.Akter_and_Spectacle">
-              <MappingFragment StoreEntitySet="Akter and Spectacle">
-                <ScalarProperty Name="id_spec" ColumnName="id_spec" />
-                <ScalarProperty Name="id_akter" ColumnName="id_akter" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Pointer">
             <EntityTypeMapping TypeName="Model.Pointer">
               <MappingFragment StoreEntitySet="Pointer">
@@ -507,8 +383,8 @@
                 <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
                 <ScalarProperty Name="id_xydoz" ColumnName="id_xydoz" />
                 <ScalarProperty Name="id_zanr" ColumnName="id_zanr" />
-                <ScalarProperty Name="Poster" ColumnName="Poster" />
                 <ScalarProperty Name="Ostatok" ColumnName="Ostatok" />
+                <ScalarProperty Name="Poster" ColumnName="Poster" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

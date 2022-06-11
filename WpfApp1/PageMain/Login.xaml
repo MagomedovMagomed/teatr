@@ -8,23 +8,37 @@
       d:DesignHeight="500" d:DesignWidth="800"
       Title="Login">
 
-    <Grid x:Name="Log" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
-        <StackPanel HorizontalAlignment="Left" Height="123" Margin="231,62,0,0" VerticalAlignment="Top" Width="310">
-            <Label  Content="Введите логин:" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Margin="0,0,0,0" Height="25"/>
+    <Grid x:Name="Log" Background="#FF9A273E">
+        <StackPanel HorizontalAlignment="Left" Height="162" Margin="194,144,0,0" VerticalAlignment="Top" Width="395">
+            <Label  Content="Введите логин:" FontSize="40" FontFamily="Bodoni MT Black" Height="70" Width="400"/>
             <TextBox x:Name="login" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="25" BorderBrush="Black"/>
             <Label Content="Введите пароль" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Margin="0,0,0,0" Height="25"/>
             <PasswordBox x:Name="password" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="250" Height="25" BorderBrush="Black"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="71" Margin="231,185,259,0" VerticalAlignment="Top">
+        <StackPanel Orientation="Horizontal" Height="71" Margin="220,357,270,0" VerticalAlignment="Top">
             <Button x:Name="Enter" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="30, 0, 10, 0"  Height="50" BorderBrush="Black" RenderTransformOrigin="-0.7,-2.612" ClickMode="Press" Click="Button_Click"/>
             <Button x:Name="Regist" Content="Регистрация" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Height="50" RenderTransformOrigin="0.347,0.078" BorderBrush="Black" OpacityMask="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="Button_Click_1"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="62" Margin="231,0,0,0" VerticalAlignment="Top" Width="310">
-            <Label Content="Окно Авторизации" FontSize="30" FontFamily="Snap ITC" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel HorizontalAlignment="Left" Height="72" Margin="185,70,0,0" VerticalAlignment="Top" Width="397" Background="#00000000" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.352"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Label Content="Окно Авторизации" FontSize="40" FontFamily="Bodoni MT Black" Height="70" Width="400">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFEFFD4" Offset="1"/>
+                        <GradientStop Color="#FFEEF195" Offset="0"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="63" Margin="263,256,0,0" VerticalAlignment="Top" Width="247">
-            <Button Content="Войти как гсть" Height="59" Click="Button_Click_2"/>
-        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="17" Margin="252,428,0,0" VerticalAlignment="Top" Width="248"/>
+        <TextBlock  HorizontalAlignment="Left" Margin="252,428,0,0" TextWrapping="Wrap" Text="Войти как гость." VerticalAlignment="Top" Width="278" PreviewMouseDown="TextBlock_PreviewMouseDown" Height="17"/>
 
     </Grid>
 </Page>

@@ -14,12 +14,6 @@ namespace WpfApp1.ApplicationData
     
     public partial class Spectacle
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Spectacle()
-        {
-            this.Akter_and_Spectacle = new HashSet<Akter_and_Spectacle>();
-        }
-    
         public int id_spectacle { get; set; }
         public int id_post { get; set; }
         public int id_scen { get; set; }
@@ -27,11 +21,9 @@ namespace WpfApp1.ApplicationData
         public string Nazvanie { get; set; }
         public int id_xydoz { get; set; }
         public int id_zanr { get; set; }
-        public byte[] Poster { get; set; }
         public int Ostatok { get; set; }
+        public string Poster { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Akter_and_Spectacle> Akter_and_Spectacle { get; set; }
         public virtual Pointer Pointer { get; set; }
         public virtual Postanovshik Postanovshik { get; set; }
         public virtual Screenwriter Screenwriter { get; set; }
