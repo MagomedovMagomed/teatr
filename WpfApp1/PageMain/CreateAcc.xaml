@@ -8,52 +8,51 @@
       d:DesignHeight="500" d:DesignWidth="800"
       Title="CreateAcc">
 
-    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
-        <StackPanel HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="800" Margin="-10,0,0,0">
+    <Grid Background="#FF9A273E">
+        <StackPanel HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="790" Background="#FF9A273E">
             <StackPanel Height="51">
-                <Label Content="Окно Регистрации" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Ravie"/>
+                <Label Content="Registration window" HorizontalAlignment="Center" FontSize="40" FontFamily="Algerian" Foreground="#FFF5F7B2" FontWeight="Bold"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
-                <Label Margin="5px" Content="Введите Фамилию:" Width="180"/>
-                <TextBox x:Name="Surename" Margin="5px" TextWrapping="Wrap" Text="" Width="180"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
+                <Label Content="Введите Фамилию:" Margin="0 0 8 0" HorizontalAlignment="Center" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" Foreground="#FFF5F7B2" Width="250" FontWeight="Bold"/>
+                <TextBox x:Name="Surename" TextWrapping="Wrap" Height="30" Text="" Width="180"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Margin="210,0">
-                <Label Margin="5px" Content="Введите Имя:" Width="180"/>
-                <TextBox x:Name="Name" Margin="5px" TextWrapping="Wrap" Text="" Width="180"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
+                <Label Content="Введите Имя:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" Foreground="#FFF5F7B2" FontWeight="Bold" Width="250"/>
+                <TextBox x:Name="Name" Height="30" TextWrapping="Wrap" Width="180"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Margin="210,0">
-                <Label Margin="5px" Content="Введите Отчество:" Width="180"/>
-                <TextBox x:Name="Father_name" Margin="5px" TextWrapping="Wrap" Text="" Width="180"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
+                <Label Content="Введите Отчество:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" Foreground="#FFF5F7B2" FontWeight="Bold" Width="250"/>
+                <TextBox x:Name="Father_name" Height="30" TextWrapping="Wrap" Width="180"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
-                <Label Margin="5px" Width="180" Content="Введите Логин:"/>
-                <TextBox x:Name="login" Margin="5px" TextWrapping="Wrap" Text="" Width="180"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
+                <Label Content="Введите Логин:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" Foreground="#FFF5F7B2" FontWeight="Bold" Width="250"/>
+                <TextBox x:Name="login" Height="30" TextWrapping="Wrap" Width="180"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
-                <Label Margin="5px" Content="Введите телефон:" Width="180"/>
-                <TextBox x:Name="Telepho" Margin="5px" Width="180"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
+                <Label Content="Введите телефон:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" Foreground="#FFF5F7B2" FontWeight="Bold" Width="250"/>
+                <TextBox x:Name="Telepho" Width="180" Height="30"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
-                <Label Margin="5px" Content="Введите дату рождения:" Width="180"/>
-                <DatePicker Margin="5px" SelectedDateChanged="Birth_SelectedDateChanged" x:Name="Birth" Width="180" DisplayDateStart="" Text="DisplayDate" IsTodayHighlighted="False"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
+                <Label Content="Введите дату рождения:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" Foreground="#FFF5F7B2" FontWeight="Bold" Width="250"/>
+                <DatePicker Height="30" SelectedDateChanged="Birth_SelectedDateChanged" x:Name="Birth" Width="180" DisplayDateStart="" Text="DisplayDate" IsTodayHighlighted="False"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40">
-                <Label Margin="5px" Content="Введите электронную почту:" Width="180"/>
-                <TextBox x:Name="EMail" Margin="5px" Width="180"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
+                <Label Content="Введите email:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" Foreground="#FFF5F7B2" FontWeight="Bold" Width="250"/>
+                <TextBox x:Name="EMail" Height="30" Width="180"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Margin="210,0">
-                <Label Margin="5px" Content="Введите пароль:" Width="180"/>
-                <TextBox x:Name="txbPass" Margin="5px" Width="180"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
+                <Label Content="Введите пароль:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" Foreground="#FFF5F7B2" FontWeight="Bold" Width="250"/>
+                <TextBox x:Name="txbPass" Height="30" Width="180"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Margin="210,0">
-                <Label Margin="5px" Content="Подтвердите пароль:" Width="180"/>
-                <PasswordBox x:Name="psbPass" PasswordChanged="PasswordBox_PasswordChanged" Margin="5px" Width="180"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
+                <Label Content="Подтвердите пароль:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" Foreground="#FFF5F7B2" FontWeight="Bold" Width="250"/>
+                <PasswordBox x:Name="psbPass" PasswordChanged="PasswordBox_PasswordChanged" Height="30" Width="180"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Margin="210,0">
-                <Button x:Name="Create" Margin="5px" Content="Создать" Width="180" Click="Button_Click" IsEnabled="False"/>
-                <Button x:Name="Back" Margin="5px" Content="Назад" Width="180" Click="Back_Click"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
+                <Button FontFamily="TextBlock_PreviewMouseDown" x:Name="Create" Margin="15 0 20 0" Height="30" Content="Создать" Width="180" Click="Button_Click" IsEnabled="False" Foreground="#FF9A273E" Background="#FFF5F7B2" BorderBrush="#FFF5F7B2" OpacityMask="#FFF5F7B2" FontSize="20" FontWeight="Bold"/>
+                <Button FontFamily="TextBlock_PreviewMouseDown" x:Name="Back" Margin="20 0 20 0" Height="30" Content="Назад" Width="180" Click="Back_Click" Background="#FFF5F7B2" Foreground="#FF9A273E" FontSize="20" FontWeight="Bold"/>
             </StackPanel>
-
         </StackPanel>
     </Grid>
 </Page>

@@ -21,9 +21,7 @@
                     </LinearGradientBrush>
                 </TextBlock.Foreground>
             </TextBlock>
-
         </StackPanel>
         <Frame x:Name="FrmMain" HorizontalAlignment="Center" Height="518" VerticalAlignment="Center" Width="800" Grid.Row="1" BorderBrush="#FF9A273E"/>
-
     </Grid>
 </Window>

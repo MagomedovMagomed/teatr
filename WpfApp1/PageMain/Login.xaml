@@ -9,17 +9,31 @@
       Title="Login">
 
     <Grid x:Name="Log" Background="#FF9A273E">
-        <StackPanel HorizontalAlignment="Left" Height="162" Margin="194,144,0,0" VerticalAlignment="Top" Width="395">
-            <Label  Content="Введите логин:" FontSize="40" FontFamily="Bodoni MT Black" Height="70" Width="400"/>
-            <TextBox x:Name="login" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="25" BorderBrush="Black"/>
-            <Label Content="Введите пароль" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Margin="0,0,0,0" Height="25"/>
-            <PasswordBox x:Name="password" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="250" Height="25" BorderBrush="Black"/>
+        <StackPanel HorizontalAlignment="Center" Height="199" Margin="0,100,0,0" VerticalAlignment="Top" Width="500">
+            <Label  Content="Login" FontSize="40" FontFamily="Britannic Bold" Height="70" Width="500" FontWeight="Bold">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFEFFD4" Offset="1"/>
+                        <GradientStop Color="#FFEEF195" Offset="0"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <TextBox x:Name="login" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Width="490" Height="30" BorderBrush="Black"/>
+            <Label Content="Password" FontSize="40" FontFamily="Britannic Bold" Height="50" Width="500" FontWeight="Bold">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFEFFD4" Offset="1"/>
+                        <GradientStop Color="#FFEEF195" Offset="0"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <PasswordBox x:Name="password" Width="490" Height="30" BorderBrush="Black"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="71" Margin="220,357,270,0" VerticalAlignment="Top">
-            <Button x:Name="Enter" Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="30, 0, 10, 0"  Height="50" BorderBrush="Black" RenderTransformOrigin="-0.7,-2.612" ClickMode="Press" Click="Button_Click"/>
-            <Button x:Name="Regist" Content="Регистрация" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Height="50" RenderTransformOrigin="0.347,0.078" BorderBrush="Black" OpacityMask="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="Button_Click_1"/>
+        <StackPanel Orientation="Horizontal" Width="500" Height="70" Margin="150,299,150,0" VerticalAlignment="Top">
+            <Button x:Name="Enter" FontFamily="Britannic Bold" Content="Enter" Margin="50 0 0 0" Width="150" Height="50" Click="Button_Click" Background="#FFF7F9B7" Foreground="#FF9A273E" FontWeight="Bold" FontSize="25"/>
+            <Button x:Name="Regist" FontFamily="Britannic Bold" Margin="100 0 0 0" Content="Registration" Click="Button_Click_1" Height="50" Width="150" Background="#FFF7F9B7" Foreground="#FF9A273E" FontWeight="Bold" FontSize="25"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="72" Margin="185,70,0,0" VerticalAlignment="Top" Width="397" Background="#00000000" RenderTransformOrigin="0.5,0.5">
+        <StackPanel HorizontalAlignment="Center" Height="72" Margin="0,26,0,0" VerticalAlignment="Top" Width="500" Background="#00000000" RenderTransformOrigin="0.5,0.5">
             <StackPanel.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -28,7 +42,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </StackPanel.RenderTransform>
-            <Label Content="Окно Авторизации" FontSize="40" FontFamily="Bodoni MT Black" Height="70" Width="400">
+            <Label Content="Authorization window" FontSize="40" FontFamily="Algerian" Height="70" Width="500" FontWeight="Bold">
                 <Label.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFEFFD4" Offset="1"/>
@@ -37,8 +51,6 @@
                 </Label.Foreground>
             </Label>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="17" Margin="252,428,0,0" VerticalAlignment="Top" Width="248"/>
-        <TextBlock  HorizontalAlignment="Left" Margin="252,428,0,0" TextWrapping="Wrap" Text="Войти как гость." VerticalAlignment="Top" Width="278" PreviewMouseDown="TextBlock_PreviewMouseDown" Height="17"/>
-
+        <TextBlock FontSize="30" HorizontalAlignment="Center" Margin="0,369,0,0" TextWrapping="Wrap" Text="Войти как гость." VerticalAlignment="Top" Width="500" PreviewMouseDown="TextBlock_PreviewMouseDown" Height="37" Background="#00000000" Foreground="#FFF9FABF" FontWeight="Bold" FontFamily="Ravie"/>
     </Grid>
 </Page>
