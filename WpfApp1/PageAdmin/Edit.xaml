@@ -8,11 +8,11 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Edit">
 
-    <Grid Background="#FF9C9C9C">
+    <Grid Background="#FF9A273E">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="222*"/>
             <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="222*"/>
             <ColumnDefinition Width="200*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -22,24 +22,87 @@
             <RowDefinition Height="100*"></RowDefinition>
             <RowDefinition Height="100*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" Content="Фамилия"/>
-        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Имя"/>
-        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Отчество"/>
-        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Content="Логин"/>
-        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Content="Телефон"/>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" Content="Дата рождения"/>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Электронная почта"/>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Пароль"/>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Content="Роль"/>
-        <Button Name="Save" Click="Save_Click" Grid.Column="3" Content="Сохранить" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="46" Width="90"/>
-        <TextBox x:Name="Sun" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Text="{Binding Surename}" Width="120"/>
-        <TextBox x:Name="Im" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Text="{Binding Name}" Width="120"/>
-        <TextBox x:Name="Fat" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Father_name}" Width="120"/>
-        <TextBox x:Name="Log" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Text="{Binding Login}" Width="120"/>
-        <TextBox x:Name="teleph" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="4" Text="{Binding Teleph}" Width="120"/>
-        <TextBox x:Name="Emal" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Text="{Binding Email}" Width="120"/>
-        <TextBox x:Name="Pass" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Password}" Width="120"/>
-        <TextBox x:Name="Role" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Text="{Binding idRole}" Width="120"/>
-        <DatePicker x:Name="Birt" SelectedDateChanged="Birt_SelectedDateChanged" Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="0" VerticalAlignment="Center" Width="120"/>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="Фамилия" FontWeight="Bold" FontFamily="Ravie" FontSize="30" Height="44" Width="144">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF7F9B7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Имя" FontWeight="Bold" FontFamily="Ravie" FontSize="30" Height="50" Width="74">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF7F9B7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Отчество" FontWeight="Bold" FontFamily="Ravie" FontSize="30" Height="50" Width="144">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF7F9B7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Content="Логин" FontWeight="Bold" FontFamily="Ravie" FontSize="30" Height="50" Width="100">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF7F9B7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Content="Телефон" FontWeight="Bold" FontFamily="Ravie" FontSize="30" Height="50" Width="136">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF7F9B7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Дата рождения" FontWeight="Bold" FontFamily="Ravie" FontSize="25" Height="44" Width="202">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF7F9B7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Почта" FontWeight="Bold" FontFamily="Ravie" FontSize="30" Height="50" Width="120">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF7F9B7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Пароль" FontWeight="Bold" FontFamily="Ravie" FontSize="30" Height="50" Width="120">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF7F9B7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Content="Роль" FontWeight="Bold" FontFamily="Ravie" FontSize="30" Height="50" Width="80">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF7F9B7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Button Name="Save" Click="Save_Click" Grid.Column="3" Content="Сохранить" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="46" Width="120" Foreground="#FF9A273E" Background="#FFFCFDE1" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="Sun" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Text="{Binding Surename}" Width="120" Height="26"/>
+        <TextBox x:Name="Im" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Text="{Binding Name}" Width="120" Height="26"/>
+        <TextBox x:Name="Fat" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Father_name}" Width="120" Height="26"/>
+        <TextBox x:Name="Log" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Text="{Binding Login}" Width="120" Height="26"/>
+        <TextBox x:Name="teleph" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="4" Text="{Binding Teleph}" Width="120" Height="26"/>
+        <TextBox x:Name="Emal" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Text="{Binding Email}" Width="120" Height="26"/>
+        <TextBox x:Name="Pass" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Password}" Width="120" Height="26"/>
+        <TextBox x:Name="Role" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Text="{Binding idRole}" Width="120" Height="26"/>
+        <DatePicker x:Name="Birt" SelectedDateChanged="Birt_SelectedDateChanged" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="24"/>
     </Grid>
 </Page>

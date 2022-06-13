@@ -8,11 +8,11 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Add">
 
-    <Grid Background="#FF9C9C9C">
+    <Grid Background="#FF9A273E">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250*"/>
             <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="250*"/>
             <ColumnDefinition Width="200*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -21,14 +21,63 @@
             <RowDefinition Height="100*"></RowDefinition>
             <RowDefinition Height="100*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" Content="Название"/>
-        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Продолжительность"/>
-        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Постановщик"/>
-        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Content="Сценарист"/>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" Content="Художник"/>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Жанр"/>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Количество оставшихся билетов"/>
-        <Button Name="Save" Click="Save_Click" Grid.Column="3" Content="Сохранить" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="46" Width="90"/>
+        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" Content="Название" Width="150" FontWeight="Bold" FontSize="25">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF8FDE1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Время спектакля" Width="222" FontWeight="Bold" FontSize="25">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF8FDE1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Постановщик" Width="179" FontWeight="Bold" FontSize="25">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF8FDE1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Content="Сценарист" Width="150" FontWeight="Bold" FontSize="25">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF8FDE1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Художник" Width="136" FontWeight="Bold" FontSize="25">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF8FDE1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Жанр" Width="83" FontWeight="Bold" FontSize="25">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF8FDE1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Content="Количество" Width="158" FontWeight="Bold" FontSize="25" Height="44" Margin="0,15,0,0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF8FDE1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Button Name="Save" Click="Save_Click" Grid.Column="3" Content="Сохранить" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="46" Width="90" Foreground="#FF9A273E" Background="#FFEEF195"/>
         <ComboBox Name="Post" SelectedItem="{Binding Postanovshik.Name}" Grid.Column="1" HorizontalAlignment="Center" SelectedValuePath="id_post" DisplayMemberPath="Name" Grid.Row="2" VerticalAlignment="Center" Width="120"/>
         <ComboBox Name="Screen" SelectedItem="{Binding Screenwriter.Name}" Grid.Column="1" HorizontalAlignment="Center" SelectedValuePath="id_Scen" DisplayMemberPath="Name" Grid.Row="3" VerticalAlignment="Center" Width="120"/>
         <ComboBox Name="Poin" SelectedItem="{Binding Pointer.Name}" Grid.Column="3" HorizontalAlignment="Center" SelectedValuePath="id_xyd" DisplayMemberPath="Name" VerticalAlignment="Center" Width="120"/>
@@ -36,5 +85,13 @@
         <TextBox x:Name="Nazv" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Text="{Binding Nazvanie}" Width="120"/>
         <TextBox x:Name="Tim" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Text="{Binding Time}" Width="120"/>
         <TextBox x:Name="Ost" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Ostatok}" Width="120"/>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Content="билетов" Width="114" FontWeight="Bold" FontSize="25" Height="47" Margin="0,56,0,0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF8FDE1"/>
+                    <GradientStop Color="#FFDFF2EA" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
     </Grid>
 </Page>
