@@ -86,6 +86,8 @@ namespace WpfApp1.PageAdmin
                 error.AppendLine("Выберите жанр");
             if (_currentSpec.Ostatok < 0)
                 error.AppendLine("Укажите правильное количество билетов");
+            if (string.IsNullOrEmpty(_currentSpec.Poster))
+                error.AppendLine("Введите url картинки");
 
             
             if (error.Length > 0)
@@ -104,6 +106,7 @@ namespace WpfApp1.PageAdmin
                     id_scen = id_wr,
                     id_xydoz = id_point,
                     id_zanr = id_zan,
+                    Poster = Poste.Text,
                 };
                 if (_currentSpec.id_spectacle == 0)
                     Entities1.GetContext().Spectacle.Add(_currentSpec);

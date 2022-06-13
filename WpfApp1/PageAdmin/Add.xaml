@@ -20,6 +20,7 @@
             <RowDefinition Height="100*"></RowDefinition>
             <RowDefinition Height="100*"></RowDefinition>
             <RowDefinition Height="100*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Grid.Column="0" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" Content="Название" Width="150" FontWeight="Bold" FontSize="25">
             <Label.Foreground>
@@ -69,7 +70,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Content="Количество" Width="158" FontWeight="Bold" FontSize="25" Height="44" Margin="0,15,0,0">
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Content="Количество" Width="158" FontWeight="Bold" FontSize="25" Height="44" Margin="0,7,0,0">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF8FDE1"/>
@@ -77,7 +78,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Button Name="Save" Click="Save_Click" Grid.Column="3" Content="Сохранить" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="46" Width="90" Foreground="#FF9A273E" Background="#FFEEF195"/>
+        <Button Name="Save" Click="Save_Click" Grid.Column="3" Content="Сохранить" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="46" Width="90" Foreground="#FF9A273E" Background="#FFEEF195"/>
         <ComboBox Name="Post" SelectedItem="{Binding Postanovshik.Name}" Grid.Column="1" HorizontalAlignment="Center" SelectedValuePath="id_post" DisplayMemberPath="Name" Grid.Row="2" VerticalAlignment="Center" Width="120"/>
         <ComboBox Name="Screen" SelectedItem="{Binding Screenwriter.Name}" Grid.Column="1" HorizontalAlignment="Center" SelectedValuePath="id_Scen" DisplayMemberPath="Name" Grid.Row="3" VerticalAlignment="Center" Width="120"/>
         <ComboBox Name="Poin" SelectedItem="{Binding Pointer.Name}" Grid.Column="3" HorizontalAlignment="Center" SelectedValuePath="id_xyd" DisplayMemberPath="Name" VerticalAlignment="Center" Width="120"/>
@@ -85,7 +86,24 @@
         <TextBox x:Name="Nazv" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Text="{Binding Nazvanie}" Width="120"/>
         <TextBox x:Name="Tim" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Text="{Binding Time}" Width="120"/>
         <TextBox x:Name="Ost" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Ostatok}" Width="120"/>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Content="билетов" Width="114" FontWeight="Bold" FontSize="25" Height="47" Margin="0,56,0,0">
+        <TextBox x:Name="Poste" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Text="{Binding Poster}" Width="120"/>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Content="билетов" Width="114" FontWeight="Bold" FontSize="25" Height="47" Margin="0,45,0,0" Grid.RowSpan="2">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF8FDE1"/>
+                    <GradientStop Color="#FFDFF2EA" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Content="Добавить url" Width="183" FontWeight="Bold" FontSize="25" Grid.Column="2" Margin="29,7,0,0">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF8FDE1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Content="постера" Width="114" FontWeight="Bold" FontSize="25" Height="47" Margin="0,35,0,0">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF8FDE1"/>
