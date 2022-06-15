@@ -21,14 +21,14 @@
                 <Grid Background="#FF9A273E">
                     <DataGrid x:Name="DBSpec" AutoGenerateColumns="False" IsReadOnly="True" Background="#FF9A273E">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Название спектакля" Binding="{Binding Nazvanie}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Продолжительность" Binding="{Binding Time}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Осталось билетов" Binding="{Binding Ostatok}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Постановщик" Binding="{Binding Postanovshik.Familia}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Художник" Binding="{Binding Pointer.Familia}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Сценарист" Binding="{Binding Screenwriter.Familia}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Постер" Binding="{Binding Poster}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Жанр" Binding="{Binding Zanr.Name}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Название спектакля" Binding="{Binding Nazvanie}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Продолжительность" Binding="{Binding Time}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Осталось билетов" Binding="{Binding Ostatok}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Постановщик" Binding="{Binding Postanovshik.Familia}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Художник" Binding="{Binding Pointer.Familia}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Сценарист" Binding="{Binding Screenwriter.Familia}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Постер" Binding="{Binding Poster}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Жанр" Binding="{Binding Zanr.Name}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
                             <DataGridTemplateColumn Width="auto">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -44,15 +44,15 @@
                 <Grid Background="#FF9A273E">
                     <DataGrid x:Name="DBUser" AutoGenerateColumns="False" IsReadOnly="True" Background="#FF9A273E">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Роль" Binding="{Binding idRole}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Фамилия" Binding="{Binding Surename}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Отчество" Binding="{Binding Father_name}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Телефон" Binding="{Binding Teleph}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Дата рождения" Binding="{Binding Data_Birth}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*" Foreground="#FFEEF195"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Роль" Binding="{Binding idRole}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Фамилия" Binding="{Binding Surename}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Отчество" Binding="{Binding Father_name}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Телефон" Binding="{Binding Teleph}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дата рождения" Binding="{Binding Data_Birth}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
                             <DataGridTemplateColumn Width="auto">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
