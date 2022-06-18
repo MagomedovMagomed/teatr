@@ -10,13 +10,13 @@
 
     <Grid Background="#FF9A273E">
         <Grid.RowDefinitions>
-            <RowDefinition Height="450*"></RowDefinition>
-            <RowDefinition Height="80*"></RowDefinition>
+            <RowDefinition Height="350*"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Button Content="Add Performance" Click="Add_Click" Name="Add" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="164" Foreground="#FF9A273E" Background="#FFEEF195" FontSize="15" FontWeight="Bold"/>
         <Button Grid.Column="3" Click="Delete_Click" Content="Delete" Name="Delete" HorizontalAlignment="Right" Margin="0,5,10,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="100" Foreground="#FF9A273E" Background="#FFEEF195" FontWeight="Bold" FontSize="20"/>
-        <TabControl Grid.Row="0" Foreground="#FF9A273E">
+        <TabControl Width="auto" Height="auto" Grid.Row="0" Foreground="#FF9A273E">
             <TabItem Header="Performance" Grid.Column="0" Foreground="#FF9A273E">
                 <Grid Background="#FF9A273E">
                     <DataGrid x:Name="DBSpec" AutoGenerateColumns="False" IsReadOnly="True" Background="#FF9A273E">
@@ -29,7 +29,7 @@
                             <DataGridTextColumn Header="Screenwriter" Binding="{Binding Screenwriter.Familia}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
                             <DataGridTextColumn Header="Poster" Binding="{Binding Poster}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
                             <DataGridTextColumn Header="Genre" Binding="{Binding Zanr.Name}" Width="*" Foreground="#FF9A273E"></DataGridTextColumn>
-                            <DataGridTemplateColumn Width="auto">
+                            <DataGridTemplateColumn Width="*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button Content="Edit" Name="Edit" Click="Edit_Click"></Button>
