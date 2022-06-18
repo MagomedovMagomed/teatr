@@ -70,7 +70,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Content="Quantity" Width="158" FontWeight="Bold" FontSize="25" Height="44" Margin="0,7,0,0">
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Content="Quantity tickets" Width="202" FontWeight="Bold" FontSize="25" Height="44" Margin="0,25,0,0">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF8FDE1"/>
@@ -87,14 +87,6 @@
         <TextBox x:Name="Tim" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Text="{Binding Time}" Width="120"/>
         <TextBox x:Name="Ost" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Ostatok}" Width="120"/>
         <TextBox x:Name="Poste" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Text="{Binding Poster}" Width="120"/>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Content="билетов" Width="114" FontWeight="Bold" FontSize="25" Height="47" Margin="0,45,0,0" Grid.RowSpan="2">
-            <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFF8FDE1"/>
-                    <GradientStop Color="#FFDFF2EA" Offset="1"/>
-                </LinearGradientBrush>
-            </Label.Foreground>
-        </Label>
         <Label HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Content="Add url Poster" Width="183" FontWeight="Bold" FontSize="25" Grid.Column="2" Margin="29,0,0,0">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
