@@ -21,7 +21,7 @@
                 </Label>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
-                <Label Content="Введите Фамилию:" Margin="0 0 8 0" HorizontalAlignment="Center" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" Width="250" FontWeight="Bold">
+                <Label Content="Enter Last Name:" Margin="0 0 8 0" HorizontalAlignment="Center" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" Width="250" FontWeight="Bold">
                     <Label.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF5F7B2" Offset="1"/>
@@ -32,7 +32,7 @@
                 <TextBox x:Name="Surename" TextWrapping="Wrap" Height="30" Text="" Width="180"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
-                <Label Content="Введите Имя:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
+                <Label Content="Enter your name:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
                     <Label.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF5F7B2" Offset="1"/>
@@ -43,7 +43,7 @@
                 <TextBox x:Name="Name" Height="30" TextWrapping="Wrap" Width="180"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
-                <Label Content="Введите Отчество:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
+                <Label Content="Enter Middle name:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
                     <Label.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="White" Offset="1"/>
@@ -54,7 +54,7 @@
                 <TextBox x:Name="Father_name" Height="30" TextWrapping="Wrap" Width="180"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
-                <Label Content="Введите Логин:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
+                <Label Content="Enter login:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
                     <Label.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF5F7B2"/>
@@ -65,7 +65,7 @@
                 <TextBox x:Name="login" Height="30" TextWrapping="Wrap" Width="180"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
-                <Label Content="Введите телефон:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
+                <Label Content="Enter phone:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
                     <Label.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFE6F7B2"/>
@@ -76,7 +76,7 @@
                 <TextBox x:Name="Telepho" Width="180" Height="30"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
-                <Label Content="Введите дату рождения:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
+                <Label Content="Enter date of birth:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
                     <Label.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF5F7B2"/>
@@ -87,7 +87,7 @@
                 <DatePicker Height="30" SelectedDateChanged="Birth_SelectedDateChanged" x:Name="Birth" Width="180" DisplayDateStart="" Text="DisplayDate" IsTodayHighlighted="False"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
-                <Label Content="Введите email:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
+                <Label Content="Enter email:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
                     <Label.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF5F7B2"/>
@@ -98,7 +98,7 @@
                 <TextBox x:Name="EMail" Height="30" Width="180"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
-                <Label Content="Введите пароль:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
+                <Label Content="Enter password:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
                     <Label.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF5F7B2"/>
@@ -109,7 +109,7 @@
                 <TextBox x:Name="txbPass" Height="30" Width="180"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
-                <Label Content="Подтвердите пароль:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
+                <Label Content="Confirm the password:" Margin="0 0 8 0" FontSize="20" FontFamily="TextBlock_PreviewMouseDown" FontWeight="Bold" Width="250">
                     <Label.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF5F7B2"/>
@@ -120,8 +120,8 @@
                 <PasswordBox x:Name="psbPass" PasswordChanged="PasswordBox_PasswordChanged" Height="30" Width="180"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="40" Width="440">
-                <Button FontFamily="TextBlock_PreviewMouseDown" x:Name="Create" Margin="15 0 20 0" Height="30" Content="Создать" Width="180" Click="Button_Click" IsEnabled="False" Foreground="#FF9A273E" Background="#FFF5F7B2" BorderBrush="#FFF5F7B2" OpacityMask="#FFF5F7B2" FontSize="20" FontWeight="Bold"/>
-                <Button FontFamily="TextBlock_PreviewMouseDown" x:Name="Back" Margin="20 0 20 0" Height="30" Content="Назад" Width="180" Click="Back_Click" Background="#FFF5F7B2" Foreground="#FF9A273E" FontSize="20" FontWeight="Bold"/>
+                <Button FontFamily="TextBlock_PreviewMouseDown" x:Name="Create" Margin="15 0 20 0" Height="30" Content="Create" Width="180" Click="Button_Click" IsEnabled="False" Foreground="#FF9A273E" Background="#FFF5F7B2" BorderBrush="#FFF5F7B2" OpacityMask="#FFF5F7B2" FontSize="20" FontWeight="Bold"/>
+                <Button FontFamily="TextBlock_PreviewMouseDown" x:Name="Back" Margin="20 0 20 0" Height="30" Content="Back" Width="180" Click="Back_Click" Background="#FFF5F7B2" Foreground="#FF9A273E" FontSize="20" FontWeight="Bold"/>
             </StackPanel>
         </StackPanel>
     </Grid>

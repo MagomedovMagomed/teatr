@@ -18,7 +18,14 @@
                     </LinearGradientBrush>
                 </Label.Foreground>
             </Label>
-            <TextBox x:Name="login" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Width="490" Height="30" BorderBrush="Black"/>
+            <TextBox x:Name="login" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Width="490" Height="30" BorderBrush="Black" FontSize="20">
+                <TextBox.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFF7F9B7" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.Foreground>
+            </TextBox>
             <Label Content="Password" FontSize="40" FontFamily="Britannic Bold" Height="50" Width="500" FontWeight="Bold">
                 <Label.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -27,7 +34,14 @@
                     </LinearGradientBrush>
                 </Label.Foreground>
             </Label>
-            <PasswordBox x:Name="password" Width="490" Height="30" BorderBrush="Black"/>
+            <PasswordBox x:Name="password" Width="490" Height="30" BorderBrush="Black" FontSize="20">
+                <PasswordBox.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFF7F9B7" Offset="1"/>
+                    </LinearGradientBrush>
+                </PasswordBox.Foreground>
+            </PasswordBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Width="500" Height="70" Margin="150,299,150,0" VerticalAlignment="Top">
             <Button x:Name="Enter" FontFamily="Britannic Bold" Content="Enter" Margin="50 0 0 0" Width="150" Height="50" Click="Button_Click" Background="#FFF7F9B7" Foreground="#FF9A273E" FontWeight="Bold" FontSize="25"/>
@@ -51,7 +65,7 @@
                 </Label.Foreground>
             </Label>
         </StackPanel>
-        <TextBlock FontSize="30" HorizontalAlignment="Center" Margin="0,369,0,0" TextWrapping="Wrap" Text="Войти как гость." VerticalAlignment="Top" Width="500" PreviewMouseDown="TextBlock_PreviewMouseDown" Height="37" FontWeight="Bold" FontFamily="Ravie" Background="#00000000">
+        <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="0,374,0,0" TextWrapping="Wrap" Text="Enter a guest" VerticalAlignment="Top" Width="500" PreviewMouseDown="TextBlock_PreviewMouseDown" Height="32" FontWeight="Bold" FontFamily="Britannic Bold" Background="#00000000">
             <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="1"/>

@@ -25,21 +25,23 @@ namespace WpfApp1.PageAdmin
         public Add(Spectacle specspec) 
         {
             InitializeComponent();
-            Post.ItemsSource = Entities1.GetContext().Postanovshik.ToList();
-            Screen.ItemsSource = Entities1.GetContext().Screenwriter.ToList();
-            Poin.ItemsSource = Entities1.GetContext().Pointer.ToList();
-            Zanr.ItemsSource = Entities1.GetContext().Zanr.ToList();
-            DataContext = _currentSpec;
+            Post.ItemsSource = Entities.GetContext().Postanovshik.ToList();
+            Screen.ItemsSource = Entities.GetContext().Screenwriter.ToList();
+            Poin.ItemsSource = Entities.GetContext().Pointer.ToList();
+            Zanr.ItemsSource = Entities.GetContext().Zanr.ToList();
 
             if(specspec != null)
             {
                 _currentSpec = specspec;
             }
+            DataContext = _currentSpec;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder error = new StringBuilder();
+
+            int a = 0;
 
             var zanr = Zanr.SelectedItem as Zanr;
             var id_zan = 0;
@@ -87,7 +89,7 @@ namespace WpfApp1.PageAdmin
             if (_currentSpec.Ostatok < 0)
                 error.AppendLine("Укажите правильное количество билетов");
             if (string.IsNullOrEmpty(_currentSpec.Poster))
-                error.AppendLine("Введите url картинки");
+                a = 1;
 
             
             if (error.Length > 0)
@@ -108,8 +110,12 @@ namespace WpfApp1.PageAdmin
                     id_zanr = id_zan,
                     Poster = Poste.Text,
                 };
+                if (a == 1)
+                {
+                    specobj.Poster = "https://i0.wp.com/service.elmi.ru/wp-content/uploads/2021/05/how-to-recover-data-if-os-x-would-not-boot.jpeg?fit=520%2C270&ssl=1";
+                }
                 if (_currentSpec.id_spectacle == 0)
-                    Entities1.GetContext().Spectacle.Add(_currentSpec);
+                    Entities.GetContext().Spectacle.Add(_currentSpec);
                 try
                 {
                     _currentSpec.id_post = id_pos;

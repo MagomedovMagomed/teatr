@@ -80,7 +80,7 @@ namespace WpfApp1.PageAdmin
                     Email = Emal.Text
                 };
                 if (_currentUser.id == 0)
-                    Entities1.GetContext().User.Add(_currentUser);
+                    Entities.GetContext().User.Add(_currentUser);
                 try
                 {
                     AppContent.Model1.User.Add(userObj);

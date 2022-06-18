@@ -30,17 +30,17 @@ namespace WpfApp1.PageClient
 			{
 				Filtr.Items.Add(i.Name);
             }
-			Sort.Items.Add("По цене");
+			Sort.Items.Add("По продолжителдьности");
 			Sort.SelectedIndex = 0;
 			Filtr.SelectedIndex = 0;
-			var _currentSpec = Entities1.GetContext().Spectacle.ToList();
+			var _currentSpec = Entities.GetContext().Spectacle.ToList();
 			Spectacle.ItemsSource = _currentSpec;
 			UpdateSpectacle();
 		}
 
 		public void UpdateSpectacle()
         {
-			var CurrentSpec = Entities1.GetContext().Spectacle.ToList();
+			var CurrentSpec = Entities.GetContext().Spectacle.ToList();
 
 			if (Filtr.SelectedIndex > 0)
             {

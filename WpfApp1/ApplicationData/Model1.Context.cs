@@ -13,18 +13,18 @@ namespace WpfApp1.ApplicationData
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities1 : DbContext
+    public partial class Entities : DbContext
     {
-        public Entities1()
+        public Entities()
             : base("name=Entities")
         {
         }
-        private static Entities1 _context;
-        public static Entities1 GetContext()
+        private static Entities _context;
+        public static Entities GetContext()
         {
             if (_context == null)
             {
-                _context = new Entities1();
+                _context = new Entities();
             }
             return _context;
         }
