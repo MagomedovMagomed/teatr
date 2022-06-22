@@ -13,23 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.ApplicationData;
+using WpfApp1;
 
 namespace WpfApp1.PageClient
 {
 	/// <summary>
 	/// Логика взаимодействия для ClientPage.xaml
 	/// </summary>
-	public partial class ClientPage : Page
+	
+    public partial class ClientPage : Page
 	{
 		public ClientPage()
 		{
 			InitializeComponent();
 
 			Filtr.Items.Add("Все жанры");
-            foreach (var i in AppContent.Model1.Zanr)
+			foreach (var i in AppContent.Model1.Zanr)
 			{
 				Filtr.Items.Add(i.Name);
-            }
+			}
 			Sort.Items.Add("По продолжителдьности");
 			Sort.SelectedIndex = 0;
 			Filtr.SelectedIndex = 0;
@@ -39,18 +41,18 @@ namespace WpfApp1.PageClient
 		}
 
 		public void UpdateSpectacle()
-        {
+		{
 			var CurrentSpec = Entities.GetContext().Spectacle.ToList();
 
 			if (Filtr.SelectedIndex > 0)
-            {
+			{
 				var tesr = Filtr.SelectedItem.ToString();
 				CurrentSpec = CurrentSpec.Where(p => p.Zanr.Name == Filtr.SelectedItem.ToString()).ToList();
-            }
+			}
 
 			CurrentSpec = CurrentSpec.Where(p => p.Nazvanie.ToLower().Contains(Search.Text.ToLower())).ToList();
 
-			
+
 			Spectacle.ItemsSource = CurrentSpec.OrderBy(p => p.Ostatok).ToList();
 		}
 

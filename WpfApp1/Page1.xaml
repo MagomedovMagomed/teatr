@@ -1,0 +1,14 @@
+﻿<Page x:Class="WpfApp1.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="40" d:DesignWidth="90"
+      Title="Page1">
+
+    <Grid>
+        <Button x:Name="OUT" Click="OUT_Click" Content="Out" Background="#FFF2F4AE" Foreground="#FF9A273E" FontWeight="Bold" FontSize="24" FontFamily="Algerian" Height="40" Width="90"/>
+    </Grid>
+</Page>

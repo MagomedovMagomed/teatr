@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.ApplicationData;
 using WpfApp1.PageMain;
+using WpfApp1.Properties;
 
 namespace WpfApp1.PageMain
 {
@@ -25,6 +26,7 @@ namespace WpfApp1.PageMain
 		public Login()
 		{
 			InitializeComponent();
+			//AppFrame.mainFrame;
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -42,13 +44,16 @@ namespace WpfApp1.PageMain
 				{
 					switch (usetObj.idRole)
 					{
-						case 1: AppFrame.frameMain.Navigate(new PageAdmin.AdminPage()); 
+						case 1: AppFrame.mainFrame.Navigate(new Page1());
+							AppFrame.frameMain.Navigate(new PageAdmin.AdminPage()); 
 							MessageBox.Show("Здравствуйте, Администратор " + usetObj.Name + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 							break;
-						case 2: AppFrame.frameMain.Navigate(new PageClient.ClientPage()); 
+						case 2: AppFrame.mainFrame.Navigate(new Page1());
+							AppFrame.frameMain.Navigate(new PageClient.ClientPage()); 
 							MessageBox.Show("Здравствуйте, Ученик " + usetObj.Name + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 							break;
 						case 3:
+							AppFrame.mainFrame.Navigate(new Page1());
 							AppFrame.frameMain.Navigate(new PageClient.ClientPage());
 							MessageBox.Show("Здравствуйте, Менеджер " + usetObj.Name + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 							break;
@@ -72,6 +77,7 @@ namespace WpfApp1.PageMain
 
         private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
+			AppFrame.mainFrame.Navigate(new Page1());
 			AppFrame.frameMain.Navigate(new PageClient.ClientPage());
 			MessageBox.Show("Здравствуйте, Гость " + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 		}

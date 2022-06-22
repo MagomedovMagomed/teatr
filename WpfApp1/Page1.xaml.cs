@@ -12,26 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Media.Effects;
 using WpfApp1.ApplicationData;
 using WpfApp1.PageMain;
 
-
 namespace WpfApp1
 {
-	/// <summary>
-	/// Логика взаимодействия для MainWindow.xaml
-	/// </summary>
-	public partial class MainWindow : Window
-	{
-		public MainWindow()
-		{
-			InitializeComponent();
-			AppContent.Model1 = new Entities();
-			AppFrame.frameMain = FrmMain;
-			FrmMain.Navigate(new Login());
-			AppFrame.mainFrame = FRm2;
-		}
+    /// <summary>
+    /// Логика взаимодействия для Page1.xaml
+    /// </summary>
+    public partial class Page1 : Page
+    {
+        public Page1()
+        {
+            InitializeComponent();
 
+        }
+        private void OUT_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.frameMain.Navigate(new Login());
+            OUT.Visibility = Visibility.Hidden;
+        }
     }
 }

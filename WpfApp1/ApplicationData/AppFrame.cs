@@ -10,5 +10,6 @@ namespace WpfApp1.ApplicationData
 	class AppFrame
 	{
 		public static Frame frameMain;
+		public static Frame mainFrame;
 	}
 }

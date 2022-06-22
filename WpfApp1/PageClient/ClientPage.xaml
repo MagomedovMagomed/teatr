@@ -105,21 +105,21 @@
                                     </LinearGradientBrush>
                                 </TextBlock.Foreground>
                             </TextBlock>
-                            <TextBlock Text="{Binding Postanovshik.Name}" Margin="0 5 0 0" Grid.Column="2" Grid.Row="2" Width="auto" FontSize="15">
+                            <TextBlock Text="{Binding Postanovshik.Familia}" Margin="0 5 0 0" Grid.Column="2" Grid.Row="2" Width="auto" FontSize="15">
                                 <TextBlock.Foreground>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="#FFF7F9B7"/>
                                         <GradientStop Color="White" Offset="1"/>
                                     </LinearGradientBrush>
                                 </TextBlock.Foreground></TextBlock>
-                            <TextBlock Text="{Binding Screenwriter.Name}" Margin="0 5 0 0" Grid.Column="2" Grid.Row="3" Width="auto" FontSize="15">
+                            <TextBlock Text="{Binding Screenwriter.Familia}" Margin="0 5 0 0" Grid.Column="2" Grid.Row="3" Width="auto" FontSize="15">
                                 <TextBlock.Foreground>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="#FFF7F9B7" Offset="0"/>
                                         <GradientStop Color="White" Offset="1"/>
                                     </LinearGradientBrush>
                                 </TextBlock.Foreground></TextBlock>
-                            <TextBlock Text="{Binding Pointer.Name}" Margin="0 5 0 0" Grid.Column="2" Grid.Row="4" FontSize="15" Width="auto">
+                            <TextBlock Text="{Binding Pointer.Familia}" Margin="0 5 0 0" Grid.Column="2" Grid.Row="4" FontSize="15" Width="auto">
                                 <TextBlock.Foreground>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="#FFF7F9B7" Offset="0"/>
