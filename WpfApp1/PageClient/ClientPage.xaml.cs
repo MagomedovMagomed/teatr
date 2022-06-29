@@ -32,7 +32,8 @@ namespace WpfApp1.PageClient
 			{
 				Filtr.Items.Add(i.Name);
 			}
-			Sort.Items.Add("По продолжителдьности");
+			Sort.Items.Add("Без сортировки");
+			Sort.Items.Add("По названию");
 			Sort.SelectedIndex = 0;
 			Filtr.SelectedIndex = 0;
 			var _currentSpec = Entities.GetContext().Spectacle.ToList();

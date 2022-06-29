@@ -137,5 +137,10 @@ namespace WpfApp1.PageAdmin
                 MessageBox.Show("Ошибка при изменении!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void Go_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.frameMain.GoBack();
+        }
     }
 }

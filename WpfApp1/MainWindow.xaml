@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Teatr" Height="620" Width="800" Icon="/logotip.png">
+        Title="Teatr" Height="700" Width="800" Icon="/logotip.png">
     <Grid Background="#FF9A273E">
         <Grid.RowDefinitions>
             <RowDefinition Height="100*"/>
@@ -23,6 +23,6 @@
             </TextBlock>
             <Frame x:Name="FRm2" Width="100" NavigationUIVisibility="Hidden"/>
         </StackPanel>
-        <Frame x:Name="FrmMain" HorizontalAlignment="Center" Height="518" VerticalAlignment="Center" Width="800" Grid.Row="1" BorderBrush="#FF9A273E" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="FrmMain" HorizontalAlignment="Center" Height="600" VerticalAlignment="Center" Width="800" Grid.Row="1" BorderBrush="#FF9A273E" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

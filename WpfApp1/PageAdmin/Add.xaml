@@ -95,5 +95,6 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
+        <Button x:Name="Go" Click="Go_Click" Grid.Column="2" Content="GoBack" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="46" Width="90" Foreground="#FF9A273E" Background="#FFEEF195" FontSize="20" FontWeight="Bold" Margin="70,2,62,2"/>
     </Grid>
 </Page>

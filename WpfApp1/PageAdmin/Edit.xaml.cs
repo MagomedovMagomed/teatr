@@ -111,5 +111,10 @@ namespace WpfApp1.PageAdmin
                 Save.IsEnabled = true;
             }
         }
+
+        private void Go_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.frameMain.GoBack();
+        }
     }
 }

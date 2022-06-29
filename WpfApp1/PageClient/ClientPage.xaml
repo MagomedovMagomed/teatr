@@ -10,7 +10,7 @@
 
     <Grid Background="#FFE4DFDF" >
         <StackPanel Orientation="Horizontal" Margin="0,60,0,0" Panel.ZIndex="11">
-            <ListView Name="Spectacle" Width="800" VirtualizingPanel.ScrollUnit="Pixel" Background="#FF9A273E" Foreground="White">
+            <ListView Name="Spectacle" Width="800" VirtualizingPanel.ScrollUnit="Pixel" Background="#FF9A273E" Foreground="White" Margin="0,10,0,0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid Height="220">
@@ -145,7 +145,7 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
-        <WrapPanel Background="#FFB82B47" Margin="0,0,0,10">
+        <WrapPanel Margin="0,12,0,378" Background="#FFB82B47">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Enter the name of the performance:" Margin="10 0 39 0" Height="20" FontWeight="Bold" FontSize="15">
@@ -169,7 +169,7 @@
                     <ComboBox  x:Name="Filtr" SelectionChanged="Filtr_SelectionChanged" Height="20" Width="220" Text=""/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Choose a sorting method:" Margin="10 0 110 0" Height="20" FontWeight="Bold" FontSize="15">
+                    <TextBlock Text="Choose a sorting method:" Margin="10 0 109 0" Height="20" FontWeight="Bold" FontSize="15">
                         <TextBlock.Foreground>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="1"/>

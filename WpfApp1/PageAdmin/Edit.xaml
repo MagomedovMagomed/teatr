@@ -104,5 +104,6 @@
         <TextBox x:Name="Pass" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Text="{Binding Password}" Width="120" Height="26"/>
         <TextBox x:Name="Role" Grid.Column="3" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Text="{Binding idRole}" Width="120" Height="26"/>
         <DatePicker x:Name="Birt" SelectedDateChanged="Birt_SelectedDateChanged" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="24"/>
+        <Button x:Name="Go" Click="Go_Click" Grid.Column="2" Content="GoBack" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="46" Width="120" Foreground="#FF9A273E" Background="#FFFCFDE1" FontWeight="Bold" FontSize="20" Margin="43,22,47,22"/>
     </Grid>
 </Page>
